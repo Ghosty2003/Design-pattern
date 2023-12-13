@@ -1,4 +1,2 @@
-﻿  Servant.cpp
-D:\软工大三上\软件设计模式\期末项目\project\Design-pattern\Design-Patterns\Servant\Servant.cpp(9,26): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\软工大三上\软件设计模式\期末项目\project\Design-pattern\Design-Patterns\Servant\Servant.cpp(18,26): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  Servant.vcxproj -> D:\软工大三上\软件设计模式\期末项目\project\Design-pattern\Design-Patterns\x64\Debug\Servant.exe
+﻿MSVCRTD.lib(exe_main.obj) : error LNK2019: 无法解析的外部符号 main，函数 "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 中引用了该符号
+D:\软工大三上\软件设计模式\期末项目\project\Design-pattern\Design-Patterns\x64\Debug\Servant.exe : fatal error LNK1120: 1 个无法解析的外部命令
