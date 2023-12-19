@@ -1,8 +1,13 @@
 # Design-pattern
 软院设计模式期末大作业
 
+
+
 主函数:
 ![image](https://github.com/Ghosty2003/Design-pattern/assets/132647980/b4125b0e-1a60-4f5d-a30e-d3e3c3105df3)
+
+
+
 输出:
 ![image](https://github.com/Ghosty2003/Design-pattern/assets/132647980/f329215b-ff4d-44c9-b188-b3098209dde3)
 
