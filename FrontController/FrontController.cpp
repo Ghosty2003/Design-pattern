@@ -3,6 +3,8 @@
 #include"../utils/cct_tools.h"
 #include"../Command/Command.h"
 #include"../Builder/Builder.h"
+#include"../Bridge/Bridge.h"
+#include"../Strategy/Strategy.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)
@@ -22,7 +24,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "bridge")
 	{
-		//testBridge();
+		testBridge();
 	}
 	else if (request == "builder")
 	{
@@ -114,7 +116,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "strategy")
 	{
-		//testStrategy();
+		testStrategy();
 	}
 	else if (request == "templateMethod")
 	{
@@ -242,8 +244,24 @@ void FrontController::trackRequest(string request)
 	else if (request == "templateMethod") {
 		request += " && RAII";
 	}
+ // 设置花的颜色为亮粉色（亮红色前景，黑色背景）
+    cct_setcolor(COLOR_BLACK, COLOR_PINK);
 
-	cout << "---------------------------------------------------------------------------\n\n";
+    // 绘制一排花
+    for (int i = 0; i <= 15; i++) {
+        cout << "  **  ";
+    }
+    cout<<"\n";
+    for (int i = 0; i <= 15; i++) {
+         cout << " *  * ";
+    }
+    cout<<"\n";
+    for (int i = 0; i <= 15; i++) {
+        cout << "  **  ";
+    }
+    cout<<"\n";
+    // 重置颜色为默认值
+    cct_setcolor();
 	outputScene(originRequest);
 	cout << "\n";
 
