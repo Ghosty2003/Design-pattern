@@ -16,7 +16,7 @@ void Dispatcher::dispatch(string request)
 
 	else if (request == "adapter")
 	{
-		//testAdaptor();
+		testAdaptor();
 	}
 	else if (request == "blackBoard")
 	{
@@ -60,7 +60,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "flyWeight")
 	{
-		//testFlyweight();
+		testFlyweight();
 	}
 	else if (request == "interpreter")
 	{
