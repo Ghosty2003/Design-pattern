@@ -11,7 +11,7 @@ void Dispatcher::dispatch(string request)
 {
 	if (request == "abstractFactory")
 	{
-		// testAbstractfactory();
+		testAbstractFactory();
 	}
 
 	else if (request == "adapter")
@@ -244,10 +244,10 @@ void FrontController::trackRequest(string request)
 	else if (request == "templateMethod") {
 		request += " && RAII";
 	}
- // ÉèÖÃ»¨µÄÑÕÉ«ÎªÁÁ·ÛÉ«£¨ÁÁºìÉ«Ç°¾°£¬ºÚÉ«±³¾°£©
+ // è®¾ç½®èŠ±çš„é¢œè‰²ä¸ºäº®ç²‰è‰²ï¼ˆäº®çº¢è‰²å‰æ™¯ï¼Œé»‘è‰²èƒŒæ™¯ï¼‰
     cct_setcolor(COLOR_BLACK, COLOR_PINK);
 
-    // »æÖÆÒ»ÅÅ»¨
+    // ç»˜åˆ¶ä¸€æ’èŠ±
     for (int i = 0; i <= 15; i++) {
         cout << "  **  ";
     }
@@ -260,7 +260,7 @@ void FrontController::trackRequest(string request)
         cout << "  **  ";
     }
     cout<<"\n";
-    // ÖØÖÃÑÕÉ«ÎªÄ¬ÈÏÖµ
+    // é‡ç½®é¢œè‰²ä¸ºé»˜è®¤å€¼
     cct_setcolor();
 	outputScene(originRequest);
 	cout << "\n";
@@ -300,7 +300,7 @@ void testAll() {
 			}
 			cout << i << "." << request << endl;
 		}
-		cout << "30.ÍË³ö\n";
+		cout << "30.é€€å‡º\n";
 		int index;
 		cin >> index;
 		if (index == 30) {
