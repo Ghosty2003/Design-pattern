@@ -70,8 +70,8 @@ void testAbstractFactory() {
 
 }
 
-
+/*
 int main()
 {
     testAbstractFactory();
-}
+}*/
