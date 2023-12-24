@@ -100,7 +100,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "proxy")
 	{
-		//testProxy();
+		testProxy();
 	}
 	else if (request == "publishSubscribe")
 	{
