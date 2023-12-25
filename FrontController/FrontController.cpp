@@ -5,6 +5,8 @@
 #include"../Builder/Builder.h"
 #include"../Bridge/Bridge.h"
 #include"../Strategy/Strategy.h"
+#include"../Proxy/Proxy.h"
+#include"../AbstractFactory/AbstractFactory.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)
