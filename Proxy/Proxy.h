@@ -69,3 +69,6 @@ public:
 private:
     std::string Ef[2];
 };
+
+
+void testProxy();
