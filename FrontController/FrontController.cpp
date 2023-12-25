@@ -1,20 +1,28 @@
 #include<iostream>
 #include"FrontController.h"
 #include"../utils/cct_tools.h"
-#include"../Command/Command.h"
+// #include"../Command/Command.h"
 #include"../Builder/Builder.h"
 #include"../Bridge/Bridge.h"
 #include"../Strategy/Strategy.h"
+// #include"../AbstractFactory/AbstractFactory.h"
+#include"../Adapter/Adapter.h"
+#include"../Flyweight/Flyweight.h"
+// #include"../Proxy/Proxy.h"
+#include"../Lazy/LazyFlowerShop.h"
+#include"../Publish/PublishSubscribe.h"
+#include"../Single/Single.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)
 {
-	if (request == "abstractFactory")
-	{
-		testAbstractFactory();
-	}
+	// if (request == "abstractFactory")
+	// {
+	// 	testAbstractFactory();
+	// }
 
-	else if (request == "adapter")
+	// else
+	 if (request == "adapter")
 	{
 		testAdaptor();
 	}
@@ -34,10 +42,10 @@ void Dispatcher::dispatch(string request)
 	{
 		//testChainOfResponsibility();
 	}
-	else if (request == "command")
-	{
-		testCommand();
-	}
+	// else if (request == "command")
+	// {
+	// 	testCommand();
+	// }
 	else if (request == "compose")
 	{
 		//testCompose();
@@ -72,7 +80,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "lazyInitialization")
 	{
-		//testLazyInitialization();
+		testLazyInitialization();
 	}
 	else if (request == "mediator")
 	{
@@ -98,13 +106,13 @@ void Dispatcher::dispatch(string request)
 	{
 		//testPrototype();
 	}
-	else if (request == "proxy")
-	{
-		testProxy();
-	}
+	// else if (request == "proxy")
+	// {
+	// 	testProxy();
+	// }
 	else if (request == "publishSubscribe")
 	{
-		//testPublishSubscribe();
+		testPublishSubscribe();
 	}
 	else if (request == "servant")
 	{
@@ -129,6 +137,10 @@ void Dispatcher::dispatch(string request)
 	else if (request == "visitor")
 	{
 		//testVisitor();
+	}
+	else if (request == "Single")
+	{
+		testSingle();
 	}
 }
 
@@ -225,6 +237,9 @@ void outputScene(string request) {
 	else if (request == "publishSubscribe") {
 		cout << "";
 	}
+	else if (request == "Single") {
+		cout << "";
+	}
 
 	cct_setcolor();
 }
@@ -260,7 +275,7 @@ void FrontController::trackRequest(string request)
         cout << "  **  ";
     }
     cout<<"\n";
-    // 重置颜色为默认值
+    // 重置颜色为默认�?
     cct_setcolor();
 	outputScene(originRequest);
 	cout << "\n";
