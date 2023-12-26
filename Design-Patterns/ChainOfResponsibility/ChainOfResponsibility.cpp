@@ -2,41 +2,55 @@
 #include"ChainOfResponsibility.h"
 
 
-void PaymentHandler::handleOrder(Order& order, const string& message) {
-    if (message == "Payment") {
-        order.request("支付处理成功");
+void FlowerArrangementHandler::handleOrder(
+    Order& order, const string& message) {
+    if (message == "FlowerArrangement") {
+        order.request("花束制作完成");
     }
     else {
         OrderHandler::handleOrder(order, message);
     }
 }
 
-void InventoryHandler::handleOrder(Order& order, const string& message) {
-    if (message == "Inventory") {
-        order.request("库存检测处理成功");
+void PackagingHandler::handleOrder(Order& order, const string& message) {
+    if (message == "Packaging") {
+        order.request("花束包装完成");
     }
     else {
         OrderHandler::handleOrder(order, message);
     }
 }
+
+void SalesHandler::handleOrder(Order& order, const string& message) {
+    if (message == "Sales") {
+        order.request("花束销售完成");
+    }
+    else {
+        OrderHandler::handleOrder(order, message);
+    }
+}
+
+
 
 void testChainOfResponsibility() {
     Order order;
-    PaymentHandler paymentHandler;
-    InventoryHandler inventoryHandler;
+    FlowerArrangementHandler flowerArrangementHandler;
+    PackagingHandler packagingHandler;
+    SalesHandler salesHandler;
 
     // 构建责任链
-    paymentHandler.setSuccessor(&inventoryHandler);
+    flowerArrangementHandler.setSuccessor(&packagingHandler);
+    packagingHandler.setSuccessor(&salesHandler);
 
     // 发送订单请求
-    paymentHandler.handleOrder(order, "Payment");
-    paymentHandler.handleOrder(order, "Inventory");
-    paymentHandler.handleOrder(order, "Shipping");
+    flowerArrangementHandler.handleOrder(order, "FlowerArrangement");
+    flowerArrangementHandler.handleOrder(order, "Packaging");
+    flowerArrangementHandler.handleOrder(order, "Sales");
 }
 
-int main() {
-   
-    testChainOfResponsibility();
-
-	return 0;
-}
+//int main() {
+//   
+//    testChainOfResponsibility();
+//
+//	return 0;
+//}

@@ -29,13 +29,18 @@ public:
 };
 
 
-class PaymentHandler : public OrderHandler {
+class FlowerArrangementHandler : public OrderHandler {
 public:
     void handleOrder(Order& order, const string& message);
 };
 
 
-class InventoryHandler : public OrderHandler {
+class PackagingHandler : public OrderHandler {
+public:
+    void handleOrder(Order& order, const string& message);
+};
+
+class SalesHandler : public OrderHandler {
 public:
     void handleOrder(Order& order, const string& message);
 };

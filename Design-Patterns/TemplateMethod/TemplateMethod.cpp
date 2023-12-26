@@ -34,7 +34,7 @@ void Lily::fertilize() {
 	cout << "给百合花施肥" << endl;
 }
 
-void testFlowerTemplate() {
+void testTemplateMethod() {
 	Rose rose;
 	Lily lily;
 	cout << "玫瑰花的生产流程：" << endl;
@@ -44,8 +44,8 @@ void testFlowerTemplate() {
 
 }
 
-int main() {
-	testFlowerTemplate();
-
-	return 0;
-}
+//int main() {
+//	testTemplateMethod();
+//
+//	return 0;
+//}

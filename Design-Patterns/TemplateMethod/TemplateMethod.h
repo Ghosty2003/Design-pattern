@@ -32,4 +32,4 @@ class Lily : public FlowerTemplate {
     void fertilize();
 };
 
-void testFlowerTemplate();
+void testTemplateMethod();

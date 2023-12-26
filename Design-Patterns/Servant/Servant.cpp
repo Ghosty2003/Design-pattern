@@ -41,8 +41,8 @@ void testServant() {
 	floristShop.useServant();
 }
 
-int main() {
-	testServant();
-
-	return 0;
-}
+//int main() {
+//	testServant();
+//
+//	return 0;
+//}
