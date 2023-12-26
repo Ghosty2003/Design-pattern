@@ -44,8 +44,8 @@ void testFlowerTemplate() {
 
 }
 
-//int main() {
-//	testFlowerTemplate();
-//
-//	return 0;
-//}
+int main() {
+	testFlowerTemplate();
+
+	return 0;
+}
