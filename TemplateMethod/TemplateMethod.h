@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-class FlowerTemplate {
+class FlowerTemplate_wwj {
 public:
     void produceFlower() {
         selectSeed();
@@ -18,14 +18,14 @@ public:
 
 };
 
-class Rose : public FlowerTemplate {
+class Rose_wwj : public FlowerTemplate_wwj {
     void selectSeed();
     void plant();
     void water();
     void fertilize();
 };
 
-class Lily : public FlowerTemplate {
+class Lily_wwj : public FlowerTemplate_wwj {
     void selectSeed();
     void plant();
     void water();

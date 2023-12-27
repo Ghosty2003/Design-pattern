@@ -4,7 +4,7 @@
 using namespace std;
 
 
-void FloristServant::watering(vector<Flower> flowers) {
+void FloristServant_wwj::watering(vector<Flower_wwj> flowers) {
 	cout << "开始浇水" << endl;
 	int len = flowers.size();
 	for (int i = 0; i < 3; i++) {
@@ -13,7 +13,7 @@ void FloristServant::watering(vector<Flower> flowers) {
 	cout << "浇水结束" << endl;
 }
 
-void FloristServant::replenishStock(vector<Flower> flowers) {
+void FloristServant_wwj::replenishStock(vector<Flower_wwj> flowers) {
 	cout << "开始管理库存" << endl;
 	int len = flowers.size();
 	for (int i = 0; i < len; i++) {
@@ -23,20 +23,20 @@ void FloristServant::replenishStock(vector<Flower> flowers) {
 }
 
 
-void FloristShop::useServant() {
-	vector<Flower> flowers;
+void FloristShop_wwj::useServant() {
+	vector<Flower_wwj> flowers;
 	
-	flowers.push_back(Flower("玫瑰花", 10));
-	flowers.push_back(Flower("满天星", 12));
-	flowers.push_back(Flower("菊花", 15));
+	flowers.push_back(Flower_wwj("玫瑰花", 10));
+	flowers.push_back(Flower_wwj("满天星", 12));
+	flowers.push_back(Flower_wwj("菊花", 15));
 
 	floristServant.watering(flowers);
 	floristServant.replenishStock(flowers);
 }
 
 void testServant() {
-	FloristServant floristServant;
-	FloristShop floristShop(floristServant);
+	FloristServant_wwj floristServant;
+	FloristShop_wwj floristShop(floristServant);
 
 	floristShop.useServant();
 }

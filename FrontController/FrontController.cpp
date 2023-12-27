@@ -7,6 +7,9 @@
 #include"../Strategy/Strategy.h"
 #include"../Proxy/Proxy.h"
 #include"../AbstractFactory/AbstractFactory.h"
+#include "../Servant/Servant.h"
+#include "../ChainOfResponsibility/ChainOfResponsibility.h"
+#include "../TemplateMethod/TemplateMethod.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)
@@ -18,7 +21,7 @@ void Dispatcher::dispatch(string request)
 
 	else if (request == "adapter")
 	{
-		testAdaptor();
+		// testAdaptor();
 	}
 	else if (request == "blackBoard")
 	{
@@ -34,7 +37,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "chainOfResponsibility")
 	{
-		//testChainOfResponsibility();
+		testChainOfResponsibility();
 	}
 	else if (request == "command")
 	{
@@ -62,7 +65,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "flyWeight")
 	{
-		testFlyweight();
+		// testFlyweight();
 	}
 	else if (request == "interpreter")
 	{
@@ -110,7 +113,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "servant")
 	{
-		//testServant();
+		testServant();
 	}
 	else if (request == "state")
 	{
@@ -122,7 +125,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "templateMethod")
 	{
-		//testTemplateMethod();
+		testTemplateMethod();
 	}
 	else if (request == "transferObject")
 	{
