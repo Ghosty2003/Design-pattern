@@ -10,6 +10,8 @@
 #include"../interpreter/interpreter.h"
 #include"../objectpool/objectpool.h"
 #include"../nullobject/nullobject.h"
+#include"../Adapter/Adapter.h"
+#include"../Flyweight/Flyweight.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)

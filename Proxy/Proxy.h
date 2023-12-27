@@ -16,7 +16,7 @@ public:
 };
 
 // 花店类
-class FlowerShop : public IBouquet {
+class Flowershop : public IBouquet {
 public:
     void deliver(std::string address) override;
 };
@@ -24,7 +24,7 @@ public:
 // 送货代理类
 class DeliveryProxy : public IBouquet {
 private:
-    FlowerShop* flowerShop;
+    Flowershop* flowerShop;
 public:
     DeliveryProxy();
     void deliver(std::string address) override;
@@ -70,12 +70,12 @@ private:
     std::string Ef[2];
 };
 
-void FlowerShop::deliver(std::string address) {
+void Flowershop::deliver(std::string address) {
     cout << "花店将花束送到地址：" << address << endl;
 }
 
 DeliveryProxy::DeliveryProxy() {
-    flowerShop = new FlowerShop();
+    flowerShop = new Flowershop();
 }
 
 void DeliveryProxy::deliver(std::string address) {
