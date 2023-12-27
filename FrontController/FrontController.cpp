@@ -5,18 +5,23 @@
 #include"../Builder/Builder.h"
 #include"../Bridge/Bridge.h"
 #include"../Strategy/Strategy.h"
+#include"../Proxy/Proxy.h"
+#include"../AbstractFactory/AbstractFactory.h"
+#include"../interpreter/interpreter.h"
+#include"../objectpool/objectpool.h"
+#include"../nullobject/nullobject.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)
 {
 	if (request == "abstractFactory")
 	{
-		// testAbstractfactory();
+		testAbstractFactory();
 	}
 
 	else if (request == "adapter")
 	{
-		//testAdaptor();
+		testAdaptor();
 	}
 	else if (request == "blackBoard")
 	{
@@ -60,11 +65,11 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "flyWeight")
 	{
-		//testFlyweight();
+		testFlyweight();
 	}
 	else if (request == "interpreter")
 	{
-		//testInterpreter();
+		test_interpreter();
 	}
 	else if (request == "iterator")
 	{
@@ -84,11 +89,11 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "nullObject")
 	{
-		//testNullObject();
+		test_nullobject();
 	}
 	else if (request == "objectPool")
 	{
-		//testObjectPool();
+		test_objectpool();
 	}
 	else if (request == "observer")
 	{
@@ -100,7 +105,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "proxy")
 	{
-		//testProxy();
+		testProxy();
 	}
 	else if (request == "publishSubscribe")
 	{
@@ -244,10 +249,10 @@ void FrontController::trackRequest(string request)
 	else if (request == "templateMethod") {
 		request += " && RAII";
 	}
- // ÉèÖÃ»¨µÄÑÕÉ«ÎªÁÁ·ÛÉ«£¨ÁÁºìÉ«Ç°¾°£¬ºÚÉ«±³¾°£©
+ // è®¾ç½®èŠ±çš„é¢œè‰²ä¸ºäº®ç²‰è‰²ï¼ˆäº®çº¢è‰²å‰æ™¯ï¼Œé»‘è‰²èƒŒæ™¯ï¼‰
     cct_setcolor(COLOR_BLACK, COLOR_PINK);
 
-    // »æÖÆÒ»ÅÅ»¨
+    // ç»˜åˆ¶ä¸€æ’èŠ±
     for (int i = 0; i <= 15; i++) {
         cout << "  **  ";
     }
@@ -260,7 +265,7 @@ void FrontController::trackRequest(string request)
         cout << "  **  ";
     }
     cout<<"\n";
-    // ÖØÖÃÑÕÉ«ÎªÄ¬ÈÏÖµ
+    // é‡ç½®é¢œè‰²ä¸ºé»˜è®¤å€¼
     cct_setcolor();
 	outputScene(originRequest);
 	cout << "\n";
@@ -300,7 +305,7 @@ void testAll() {
 			}
 			cout << i << "." << request << endl;
 		}
-		cout << "30.ÍË³ö\n";
+		cout << "30.é€€å‡º\n";
 		int index;
 		cin >> index;
 		if (index == 30) {
