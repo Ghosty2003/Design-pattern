@@ -33,3 +33,5 @@ public:
     void deliverFlowers();  // 送花服务
     void assignRandomActivity(); //随机分配活动
 };
+
+void testFacade();

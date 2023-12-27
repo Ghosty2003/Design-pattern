@@ -19,16 +19,16 @@ public:
     void releaseResources();
 };
 
-class FlowerShop {
+class FlowerShopGYYR {
 public:
-    FlowerShop() {
+    FlowerShopGYYR() {
         std::cout << "欢迎光临花店！" << std::endl;
     }
 
     void sellFlowers();
     void arrangeEvent();
 
-    ~FlowerShop() {
+    ~FlowerShopGYYR() {
         std::cout << "感谢您的光临！" << std::endl;
     }
 };

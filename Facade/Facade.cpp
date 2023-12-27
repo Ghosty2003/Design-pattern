@@ -63,7 +63,6 @@ void FlowerShopFacade::purchaseFlowers() {
 // 新增安排活动的方法
 void FlowerShopFacade::arrangeEvent() {
     std::cout << "欢迎来到花店活动安排服务！" << std::endl;
-    // 在此添加安排活动的具体逻辑
     std::cout << "活动安排完成！" << std::endl;
     pressEnterToContinue();
 }
@@ -71,7 +70,6 @@ void FlowerShopFacade::arrangeEvent() {
 // 新增送花服务的方法
 void FlowerShopFacade::deliverFlowers() {
     std::cout << "欢迎来到花店送花服务！" << std::endl;
-    // 在此添加送花服务的具体逻辑
     std::cout << "花卉已成功送达！" << std::endl;
     pressEnterToContinue();
 }
@@ -92,18 +90,13 @@ void FlowerShopFacade::assignRandomActivity() {
 void testFacade() {
     srand((unsigned)time(0));
 
-    FlowerShopFacade flowerShop;
+    FlowerShopFacade flowerShopGYYF;
 
     for (int i = 1; i <= 3; i++) {
         std::cout << "第 " << i << " 批顾客来到花店" << std::endl;
-        flowerShop.assignRandomActivity();
+        flowerShopGYYF.assignRandomActivity();
         std::cout << std::endl;
         pressEnterToContinue();
     }
 }
 
-
-//int main()
-//{
-//    testFacade();
-//}

@@ -37,7 +37,3 @@ void testCompose() {
     delete product3;
     delete set2;
 }
-int main()
-{
-    testCompose();
-}
