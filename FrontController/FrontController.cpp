@@ -12,6 +12,9 @@
 #include"../nullobject/nullobject.h"
 #include"../Adapter/Adapter.h"
 #include"../Flyweight/Flyweight.h"
+#include"../Visitor/Visitor.h"
+#include"../Iterator/Iterator.h"
+#include"../State/State.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)
@@ -75,7 +78,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "iterator")
 	{
-		//testIterator();
+		testIterator();
 	}
 	else if (request == "lazyInitialization")
 	{
@@ -119,7 +122,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "state")
 	{
-		//testState();
+		testState();
 	}
 	else if (request == "strategy")
 	{
@@ -135,7 +138,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "visitor")
 	{
-		//testVisitor();
+		testVisitor();
 	}
 }
 
