@@ -10,9 +10,6 @@
 #include "../Servant/Servant.h"
 #include "../ChainOfResponsibility/ChainOfResponsibility.h"
 #include "../TemplateMethod/TemplateMethod.h"
-#include"../interpreter/interpreter.h"
-#include"../objectpool/objectpool.h"
-#include"../nullobject/nullobject.h"
 #include"../Adapter/Adapter.h"
 #include"../Flyweight/Flyweight.h"
 
@@ -76,7 +73,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "interpreter")
 	{
-		test_interpreter();
+		//test_interpreter();
 	}
 	else if (request == "iterator")
 	{
@@ -96,11 +93,11 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "nullObject")
 	{
-		test_nullobject();
+		//test_nullobject();
 	}
 	else if (request == "objectPool")
 	{
-		test_objectpool();
+		//test_objectpool();
 	}
 	else if (request == "observer")
 	{
