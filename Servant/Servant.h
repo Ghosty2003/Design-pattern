@@ -3,17 +3,17 @@
 #include<vector>
 using namespace std;
 
-class Flower {
+class Flower_wwj {
 private:
 	string flowerName;
 	int nums;
 public:
-	Flower(string flowername, int nums) {
+	Flower_wwj(string flowername, int nums) {
 		this->flowerName = flowername;
 		this->nums = nums;
 	}
 
-	Flower() {};
+	Flower_wwj() {};
 
 	string getName() {
 		return this->flowerName;
@@ -24,20 +24,20 @@ public:
 	}
 };
 
-class FloristServant {
+class FloristServant_wwj {
 public:
-	void watering(vector<Flower> flowers);	//鲜花浇水
+	void watering(vector<Flower_wwj> flowers);	//鲜花浇水
 
-	void replenishStock(vector<Flower> flowers);	//管理鲜花库存
+	void replenishStock(vector<Flower_wwj> flowers);	//管理鲜花库存
 
 };
 
-class FloristShop {
+class FloristShop_wwj {
 private:
-	FloristServant floristServant;
+	FloristServant_wwj floristServant;
 
 public:
-	FloristShop(const FloristServant& servant) : floristServant(servant) {}
+	FloristShop_wwj(const FloristServant_wwj& servant) : floristServant(servant) {}
 
 	void useServant();
 

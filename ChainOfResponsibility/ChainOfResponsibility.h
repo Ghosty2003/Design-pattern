@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 
-class Order {
+class Order_wwj {
 public:
     void request(const string& message) {
         cout << "Order: " << message << endl;
@@ -10,18 +10,18 @@ public:
 };
 
 
-class OrderHandler {
+class OrderHandler_wwj {
 protected:
-    OrderHandler* successor;
+    OrderHandler_wwj* successor;
 
 public:
-    OrderHandler() : successor(nullptr) {}
+    OrderHandler_wwj() : successor(nullptr) {}
 
-    void setSuccessor(OrderHandler* successor) {
+    void setSuccessor(OrderHandler_wwj* successor) {
         this->successor = successor;
     }
 
-    virtual void handleOrder(Order& order, const string& message) {
+    virtual void handleOrder(Order_wwj& order, const string& message) {
         if (successor != nullptr) {
             successor->handleOrder(order, message);
         }
@@ -29,20 +29,20 @@ public:
 };
 
 
-class FlowerArrangementHandler : public OrderHandler {
+class FlowerArrangementHandler_wwj : public OrderHandler_wwj {
 public:
-    void handleOrder(Order& order, const string& message);
+    void handleOrder(Order_wwj& order, const string& message);
 };
 
 
-class PackagingHandler : public OrderHandler {
+class PackagingHandler_wwj : public OrderHandler_wwj {
 public:
-    void handleOrder(Order& order, const string& message);
+    void handleOrder(Order_wwj& order, const string& message);
 };
 
-class SalesHandler : public OrderHandler {
+class SalesHandler_wwj : public OrderHandler_wwj {
 public:
-    void handleOrder(Order& order, const string& message);
+    void handleOrder(Order_wwj& order, const string& message);
 };
 
 void testChainOfResponsibility();

@@ -7,11 +7,13 @@
 #include"../Strategy/Strategy.h"
 #include"../Proxy/Proxy.h"
 #include"../AbstractFactory/AbstractFactory.h"
-#include"../interpreter/interpreter.h"
-#include"../objectpool/objectpool.h"
-#include"../nullobject/nullobject.h"
+#include "../Servant/Servant.h"
+#include "../ChainOfResponsibility/ChainOfResponsibility.h"
+#include "../TemplateMethod/TemplateMethod.h"
 #include"../Adapter/Adapter.h"
 #include"../Flyweight/Flyweight.h"
+
+
 using namespace std;
 
 void Dispatcher::dispatch(string request)
@@ -23,7 +25,7 @@ void Dispatcher::dispatch(string request)
 
 	else if (request == "adapter")
 	{
-		testAdaptor();
+		// testAdaptor();
 	}
 	else if (request == "blackBoard")
 	{
@@ -39,7 +41,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "chainOfResponsibility")
 	{
-		//testChainOfResponsibility();
+		testChainOfResponsibility();
 	}
 	else if (request == "command")
 	{
@@ -67,11 +69,11 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "flyWeight")
 	{
-		testFlyweight();
+		// testFlyweight();
 	}
 	else if (request == "interpreter")
 	{
-		test_interpreter();
+		//test_interpreter();
 	}
 	else if (request == "iterator")
 	{
@@ -91,11 +93,11 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "nullObject")
 	{
-		test_nullobject();
+		//test_nullobject();
 	}
 	else if (request == "objectPool")
 	{
-		test_objectpool();
+		//test_objectpool();
 	}
 	else if (request == "observer")
 	{
@@ -115,7 +117,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "servant")
 	{
-		//testServant();
+		testServant();
 	}
 	else if (request == "state")
 	{
@@ -127,7 +129,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "templateMethod")
 	{
-		//testTemplateMethod();
+		testTemplateMethod();
 	}
 	else if (request == "transferObject")
 	{
