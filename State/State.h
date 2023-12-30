@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include"../utils/cct_tools.h"
 // 抽象状态类
 class FlowerState {
 public:
@@ -11,7 +11,8 @@ public:
 class FreshFlowerState : public FlowerState {
 public:
     void process() override {
-        std::cout << "以正常价格出售新鲜花卉。" << std::endl;
+        cct_setcolor(COLOR_BLACK, COLOR_HRED);
+        std::cout << "我们将以正常价格出售新鲜花卉" << std::endl;
     }
 };
 
@@ -19,7 +20,8 @@ public:
 class SlightlyWitheredFlowerState : public FlowerState {
 public:
     void process() override {
-        std::cout << "在晚上以折扣价销售略有不新鲜的花卉。" << std::endl;
+        cct_setcolor(COLOR_BLACK, COLOR_YELLOW);
+        std::cout << "我们将以折扣价销售略有不新鲜的花卉" << std::endl;
     }
 };
 
@@ -27,17 +29,18 @@ public:
 class WitheredFlowerState : public FlowerState {
 public:
     void process() override {
-        std::cout << "丢弃枯萎和品次较差的花卉。" << std::endl;
+        cct_setcolor(COLOR_BLACK, COLOR_HBLACK);
+        std::cout << "丢弃枯萎和品次较差的花卉" << std::endl;
     }
 };
 
 // 上下文类 - 花店
-class FlowerShop1 {
+class FlowerShopxlj1 {
 private:
     FlowerState* currentState;
 
 public:
-    FlowerShop1() : currentState(new FreshFlowerState()) {}
+    FlowerShopxlj1() : currentState(new FreshFlowerState()) {}
 
     void setState(FlowerState* state) {
         delete currentState;
@@ -48,7 +51,7 @@ public:
         currentState->process();
     }
 
-    ~FlowerShop1() {
+    ~FlowerShopxlj1() {
         delete currentState;
     }
 };

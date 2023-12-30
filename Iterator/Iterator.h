@@ -1,10 +1,9 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include"../utils/cct_tools.h"
 #include <string>
-
-//函数申明
-void  testIterator();
+void  testIterator(); //测试函数
 // 抽象迭代器
 class Iterator {
 public:
@@ -33,7 +32,7 @@ public:
 };
 
 // 花店聚合类
-class FlowerShop2 {
+class FlowerShopxlj2 {
 private:
     std::vector<std::string> flowerTypes;
 
