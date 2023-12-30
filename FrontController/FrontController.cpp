@@ -109,7 +109,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "proxy")
 	{
-		testProxy();
+		testAbstractFactory();
 	}
 	else if (request == "publishSubscribe")
 	{
