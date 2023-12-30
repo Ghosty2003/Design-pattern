@@ -9,7 +9,7 @@
 #include <windows.h>
 
 using namespace std;
-
+抽象工厂和代理模式共用一个cpp和h，测试共用一个test
 // 花束接口
 class IBouquetRQX {
 public:
