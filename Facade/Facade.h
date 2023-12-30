@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include"../utils/cct_tools.h"
 
 // 子系统1: 花卉库存管理
 class InventorySystem {

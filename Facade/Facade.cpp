@@ -1,4 +1,4 @@
-#include "Facade.h"
+ï»¿#include "Facade.h"
 #include <vector>
 
 class InventorySystem;
@@ -6,75 +6,61 @@ class OrderProcessingSystem;
 class CustomerServiceSystem;
 class FlowerShopFacade;
 
-void pressEnterToContinue() {
-    std::cout << "°´»Ø³µ¼ü¼ÌÐø...";
-    std::cin.ignore();  // ºöÂÔÓÃ»§ÊäÈë£¬µÈ´ý»Ø³µ
-    std::cout << std::endl;
-}
-
-// ÊµÏÖ×ÓÏµÍ³1
+// å®žçŽ°å­ç³»ç»Ÿ1
 void InventorySystem::checkInventory() {
-    std::cout << "¼ì²é»¨»Ü¿â´æ..." << std::endl;
-    pressEnterToContinue();
+    std::cout << "æ£€æŸ¥èŠ±å‰åº“å­˜..." << std::endl;
 }
 
 void InventorySystem::updateInventory() {
-    std::cout << "¸üÐÂ»¨»Ü¿â´æ..." << std::endl;
-    pressEnterToContinue();
+    std::cout << "æ›´æ–°èŠ±å‰åº“å­˜..." << std::endl;
 }
 
-// ÊµÏÖ×ÓÏµÍ³2
+// å®žçŽ°å­ç³»ç»Ÿ2
 void OrderProcessingSystem::placeOrder() {
-    std::cout << "ÏÂµ¥¹ºÂò»¨»Ü..." << std::endl;
-    pressEnterToContinue();
+    std::cout << "ä¸‹å•è´­ä¹°èŠ±å‰..." << std::endl;
 }
 
 void OrderProcessingSystem::processPayment() {
-    std::cout << "´¦Àí¶©µ¥Ö§¸¶..." << std::endl;
-    pressEnterToContinue();
+    std::cout << "å¤„ç†è®¢å•æ”¯ä»˜..." << std::endl;
 }
 
-// ÊµÏÖ×ÓÏµÍ³3
+// å®žçŽ°å­ç³»ç»Ÿ3
 void CustomerServiceSystem::provideAssistance() {
-    std::cout << "Ìá¹©¿Í»§·þÎñ..." << std::endl;
-    pressEnterToContinue();
+    std::cout << "æä¾›å®¢æˆ·æœåŠ¡..." << std::endl;
 }
 
-// ÊµÏÖ»¨µêÍâ¹ÛÀà£¨Facade£©
+// å®žçŽ°èŠ±åº—å¤–è§‚ç±»ï¼ˆFacadeï¼‰
 FlowerShopFacade::FlowerShopFacade() {
-    // ³õÊ¼»¯×ÓÏµÍ³
+    // åˆå§‹åŒ–å­ç³»ç»Ÿ
 }
 
 FlowerShopFacade::~FlowerShopFacade() {
-    // Ïú»Ù×ÓÏµÍ³
+    // é”€æ¯å­ç³»ç»Ÿ
 }
 
-// ÊµÏÖ¹ºÂò»¨»ÜµÄ·½·¨
+// å®žçŽ°è´­ä¹°èŠ±å‰çš„æ–¹æ³•
 void FlowerShopFacade::purchaseFlowers() {
-    std::cout << "»¶Ó­¹âÁÙ»¨µê£¡" << std::endl;
+    std::cout << "æ¬¢è¿Žå…‰ä¸´èŠ±åº—ï¼" << std::endl;
     InventorySystem().checkInventory();
     OrderProcessingSystem().placeOrder();
     OrderProcessingSystem().processPayment();
     CustomerServiceSystem().provideAssistance();
-    std::cout << "¸ÐÐ»Äú¹âÁÙÎÒÃÇµÄµêÆÌ£¡" << std::endl;
-    pressEnterToContinue();
+    std::cout << "æ„Ÿè°¢æ‚¨å…‰ä¸´æˆ‘ä»¬çš„åº—é“ºï¼" << std::endl;
 }
 
-// ÐÂÔö°²ÅÅ»î¶¯µÄ·½·¨
+// æ–°å¢žå®‰æŽ’æ´»åŠ¨çš„æ–¹æ³•
 void FlowerShopFacade::arrangeEvent() {
-    std::cout << "»¶Ó­À´µ½»¨µê»î¶¯°²ÅÅ·þÎñ£¡" << std::endl;
-    std::cout << "»î¶¯°²ÅÅÍê³É£¡" << std::endl;
-    pressEnterToContinue();
+    std::cout << "æ¬¢è¿Žå…‰ä¸´èŠ±åº—ï¼Œä¸ºé¡¾å®¢å®‰æŽ’èŠ±å‰è£…é¥°æœåŠ¡ï¼" << std::endl;
+    std::cout << "èŠ±å‰è£…é¥°å®‰æŽ’å®Œæˆï¼" << std::endl;
 }
 
-// ÐÂÔöËÍ»¨·þÎñµÄ·½·¨
+// æ–°å¢žé€èŠ±æœåŠ¡çš„æ–¹æ³•
 void FlowerShopFacade::deliverFlowers() {
-    std::cout << "»¶Ó­À´µ½»¨µêËÍ»¨·þÎñ£¡" << std::endl;
-    std::cout << "»¨»ÜÒÑ³É¹¦ËÍ´ï£¡" << std::endl;
-    pressEnterToContinue();
+    std::cout << "æ¬¢è¿Žå…‰ä¸´èŠ±åº—ï¼Œä¸ºé¡¾å®¢å®‰æŽ’é€èŠ±æœåŠ¡ï¼" << std::endl;
+    std::cout << "èŠ±å‰å·²æˆåŠŸé€è¾¾ï¼" << std::endl;
 }
 
-// ÐÂÔöËæ»ú·ÖÅä»î¶¯µÄ·½·¨
+// æ–°å¢žéšæœºåˆ†é…æ´»åŠ¨çš„æ–¹æ³•
 void FlowerShopFacade::assignRandomActivity() {
     std::vector<void (FlowerShopFacade::*)()> activities = {
         &FlowerShopFacade::purchaseFlowers,
@@ -82,21 +68,28 @@ void FlowerShopFacade::assignRandomActivity() {
         &FlowerShopFacade::deliverFlowers
     };
 
-    // Ëæ»úÑ¡ÔñÒ»¸ö»î¶¯
-    int randomIndex = rand() % activities.size();
-    (this->*activities[randomIndex])();  // µ÷ÓÃÑ¡ÔñµÄ»î¶¯
+
+    // éšæœºé€‰æ‹©ä¸€ä¸ªæ´»åŠ¨
+    int randomIndex = rand() % 3;
+    (this->*activities[randomIndex])();  // è°ƒç”¨é€‰æ‹©çš„æ´»åŠ¨
 }
 
 void testFacade() {
+
     srand((unsigned)time(0));
 
     FlowerShopFacade flowerShopGYYF;
 
+    std::cout << "*~æ­£åœ¨ä¸ºé¡¾å®¢éšæœºåˆ†é…èŠ±åº—æ´»åŠ¨~*" << std::endl;
+
     for (int i = 1; i <= 3; i++) {
-        std::cout << "µÚ " << i << " Åú¹Ë¿ÍÀ´µ½»¨µê" << std::endl;
+        cct_setcolor(COLOR_BLACK, COLOR_WHITE);
+        std::cout << "ç¬¬ " << i << " æ‰¹é¡¾å®¢æ¥åˆ°èŠ±åº—" << std::endl;
+        cct_setcolor(COLOR_BLACK, COLOR_HWHITE - i);
         flowerShopGYYF.assignRandomActivity();
         std::cout << std::endl;
-        pressEnterToContinue();
     }
-}
 
+    cct_setcolor(COLOR_BLACK, COLOR_WHITE);
+
+}

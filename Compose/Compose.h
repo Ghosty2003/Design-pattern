@@ -2,6 +2,7 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include "../utils/cct_tools.h"
 
 class FlowerComponent {
 protected:
@@ -69,6 +70,5 @@ public:
 };
 
 void flowerShopClientCode(FlowerComponent* component);
-void pressEntertoContinue();
 
 void testCompose();
