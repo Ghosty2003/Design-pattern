@@ -12,6 +12,7 @@
 #include "../ChainOfResponsibility/ChainOfResponsibility.h"
 #include "../Servant/Servant.h"
 #include "../TemplateMethod/TemplateMethod.h"
+#include "../Prototype/Prototype.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)
@@ -103,7 +104,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "prototype")
 	{
-		//testPrototype();
+		testPrototype();
 	}
 	else if (request == "proxy")
 	{
