@@ -71,7 +71,5 @@ void testAbstractFactory() {
 }
 
 
-int main()
-{
-    testAbstractFactory();
-}
+void testAbstractFactory();
+

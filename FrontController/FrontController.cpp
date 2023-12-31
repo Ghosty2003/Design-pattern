@@ -6,30 +6,19 @@
 #include"../Bridge/Bridge.h"
 #include"../Strategy/Strategy.h"
 #include"../Proxy/Proxy.h"
-<<<<<<< Updated upstream
-// #include"../AbstractFactory/AbstractFactory.h"
-#include "../Servant/Servant.h"
-#include "../ChainOfResponsibility/ChainOfResponsibility.h"
-#include "../TemplateMethod/TemplateMethod.h"
-#include"../Adapter/Adapter.h"
-#include"../Flyweight/Flyweight.h"
-
-
-=======
 #include"../AbstractFactory/AbstractFactory.h"
-#include"../interpreter/interpreter.h"
-#include"../objectpool/objectpool.h"
-#include"../nullobject/nullobject.h"
 #include"../Adapter/Adapter.h"
 #include"../Flyweight/Flyweight.h"
->>>>>>> Stashed changes
+#include "../ChainOfResponsibility/ChainOfResponsibility.h"
+#include "../Servant/Servant.h"
+#include "../TemplateMethod/TemplateMethod.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)
 {
 	if (request == "abstractFactory")
 	{
-		//testAbstractFactory();
+		testAbstractFactory();
 	}
 
 	else if (request == "adapter")
@@ -279,11 +268,7 @@ void FrontController::trackRequest(string request)
         cout << "  **  ";
     }
     cout<<"\n";
-<<<<<<< Updated upstream
     // 重置颜色为默认�?
-=======
-    // 重置颜色为默认�?
->>>>>>> Stashed changes
     cct_setcolor();
 	outputScene(originRequest);
 	cout << "\n";
