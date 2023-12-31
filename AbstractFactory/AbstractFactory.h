@@ -9,20 +9,19 @@
 #include <windows.h>
 
 using namespace std;
-
 // 花束接口
 class IBouquetRQX {
 public:
     virtual void deliver(std::string address) = 0;
 };
 
-// 花店类
+// 花店�?
 class FlowershopRQX : public IBouquetRQX {
 public:
     void deliver(std::string address) override;
 };
 
-// 送货代理类
+// 送货代理�?
 class DeliveryProxyRQX : public IBouquetRQX {
 private:
     FlowershopRQX* flowerShop;
@@ -43,7 +42,7 @@ public:
     virtual IBouquetRQX* createBouquet() = 0;
 };
 
-// 高端花束类
+// 高端花束�?
 class HighEndBouquetRQX : public IBouquetRQX {
 public:
     void deliver(std::string address) override;
@@ -63,16 +62,12 @@ private:
     std::string Hf[2];
 };
 
-// 经济型花束工厂
+// 经济型花束工�?
 class EconomyBouquetFactoryRQX : public IBouquetFactoryRQX {
 public:
     IBouquetRQX* createBouquet() override;
 private:
     std::string Ef[2];
 };
-
-
-
-
 
 void testAbstractFactory();
