@@ -78,7 +78,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "mediator")
 	{
-		//testMediator();
+		testMediator();
 	}
 	else if (request == "memento")
 	{
@@ -126,7 +126,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "transferObject")
 	{
-		//testTransferObject();
+		testTransferObject();
 	}
 	else if (request == "visitor")
 	{
