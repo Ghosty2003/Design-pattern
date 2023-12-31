@@ -6,7 +6,8 @@
 #include"../Bridge/Bridge.h"
 #include"../Strategy/Strategy.h"
 #include"../Proxy/Proxy.h"
-#include"../AbstractFactory/AbstractFactory.h"
+<<<<<<< Updated upstream
+// #include"../AbstractFactory/AbstractFactory.h"
 #include "../Servant/Servant.h"
 #include "../ChainOfResponsibility/ChainOfResponsibility.h"
 #include "../TemplateMethod/TemplateMethod.h"
@@ -14,13 +15,21 @@
 #include"../Flyweight/Flyweight.h"
 
 
+=======
+#include"../AbstractFactory/AbstractFactory.h"
+#include"../interpreter/interpreter.h"
+#include"../objectpool/objectpool.h"
+#include"../nullobject/nullobject.h"
+#include"../Adapter/Adapter.h"
+#include"../Flyweight/Flyweight.h"
+>>>>>>> Stashed changes
 using namespace std;
 
 void Dispatcher::dispatch(string request)
 {
 	if (request == "abstractFactory")
 	{
-		testAbstractFactory();
+		//testAbstractFactory();
 	}
 
 	else if (request == "adapter")
@@ -109,7 +118,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "proxy")
 	{
-		testAbstractFactory();
+		//testAbstractFactory();
 	}
 	else if (request == "publishSubscribe")
 	{
@@ -140,6 +149,7 @@ void Dispatcher::dispatch(string request)
 		//testVisitor();
 	}
 }
+
 
 //
 void outputScene(string request) {
@@ -269,7 +279,11 @@ void FrontController::trackRequest(string request)
         cout << "  **  ";
     }
     cout<<"\n";
-    // 重置颜色为默认值
+<<<<<<< Updated upstream
+    // 重置颜色为默认�?
+=======
+    // 重置颜色为默认�?
+>>>>>>> Stashed changes
     cct_setcolor();
 	outputScene(originRequest);
 	cout << "\n";
@@ -289,12 +303,21 @@ void FrontController::dispatchRequest(string request)
 	trackRequest(request);
 	dispatcher->dispatch(request);
 }
-
 void testAll() {
 	while (1) {
 		cct_cls();
-		for (int i = 0; i < 30; i++) {
-			string request = designPatterns[i];
+		
+		const int consoleWidth = 80; 
+		const int consoleHeight = 32;
+
+		int bg_color = 0; // 背景颜色代码，例如黑色
+		int fg_color = 14; // 前景颜色代码，例如黄色
+
+		// 绘制顶部边框
+		cct_showch(0, 0, '*', bg_color, fg_color, consoleWidth);
+		cout << endl;
+		for (int i = 1; i <= 30; i++) {
+			string request = (i == 30) ? "quit" : designPatterns[i - 1];
 			if (request == "observer") {
 				request += " && singleton";
 			}
@@ -306,11 +329,19 @@ void testAll() {
 			}
 			else if (request == "templateMethod") {
 				request += " && RAII";
-			}
-			cout << i << "." << request << endl;
+			}		
+			// 绘制左边框
+            cct_showch(0, i, '*', bg_color, fg_color, 1);
+            cout << " " << i - 1 << "." << request;
+            // 绘制右边框
+            cct_showch(consoleWidth - 1, i, '*', bg_color, fg_color, 1);
+			cout << endl;
 		}
-		cout << "30.退出\n";
+		// 绘制底部边框
+    	cct_showch(0, consoleHeight - 1, '*', bg_color, fg_color, consoleWidth);
+		cct_setcolor();
 		int index;
+		cout << endl;
 		cin >> index;
 		if (index == 30) {
 			break;

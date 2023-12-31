@@ -7,12 +7,17 @@ private:
     std::string flowerType;
     int quantity;
     std::string status;
+    std::string occasion;           
+    std::string packagingMaterial;  
 
 public:
     void setFlowerType(const std::string& type);
     void setQuantity(int qty);
     void setStatus(const std::string& status);
-    std::string getInfo();
+    void setOccasion(const std::string& oc);       
+    void setPackagingMaterial(const std::string& mat);
+    std::string getInfo(); 
+    std::string getGift(); 
 };
 
 // 创建订单的抽象接口
@@ -29,6 +34,8 @@ public:
     virtual void buildFlowerType() = 0;
     virtual void buildQuantity() = 0;
     virtual void buildStatus() = 0;
+    virtual void buildOccasion() = 0;
+    virtual void buildPackagingMaterial() = 0;
 };
 
 // 具体的订单创建者
@@ -37,6 +44,8 @@ public:
     void buildFlowerType() override;
     void buildQuantity() override;
     void buildStatus() override;
+    void buildOccasion() override;
+    void buildPackagingMaterial() override;
 };
 
 class LilyOrderBuilder : public OrderBuilder {
@@ -44,7 +53,29 @@ public:
     void buildFlowerType() override;
     void buildQuantity() override;
     void buildStatus() override;
+    void buildOccasion() override;
+    void buildPackagingMaterial() override;
 };
+
+class BirthdayOrderBuilder : public OrderBuilder {
+public:
+    void buildFlowerType() override;
+    void buildQuantity() override;
+    void buildStatus() override;
+    void buildOccasion() override;
+    void buildPackagingMaterial() override;
+};
+
+class ValentineOrderBuilder : public OrderBuilder {
+public:
+    void buildFlowerType() override;
+    void buildQuantity() override;
+    void buildStatus() override ;
+    void buildOccasion() override;
+    void buildPackagingMaterial() override ;
+};
+
+// Director 类定义保持不变
 
 // 导演类，指导具体订单的建造
 class Director {

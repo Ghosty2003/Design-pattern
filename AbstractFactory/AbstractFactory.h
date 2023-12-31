@@ -9,20 +9,20 @@
 #include <windows.h>
 
 using namespace std;
-抽象工厂和代理模式共用一个cpp和h，测试共用一个test
+//抽象工厂和代理模式共用一个cpp和h，测试共用一个test
 // 花束接口
 class IBouquetRQX {
 public:
     virtual void deliver(std::string address) = 0;
 };
 
-// 花店类
+// 花店�?
 class FlowershopRQX : public IBouquetRQX {
 public:
     void deliver(std::string address) override;
 };
 
-// 送货代理类
+// 送货代理�?
 class DeliveryProxyRQX : public IBouquetRQX {
 private:
     FlowershopRQX* flowerShop;
@@ -43,7 +43,7 @@ public:
     virtual IBouquetRQX* createBouquet() = 0;
 };
 
-// 高端花束类
+// 高端花束�?
 class HighEndBouquetRQX : public IBouquetRQX {
 public:
     void deliver(std::string address) override;
@@ -63,7 +63,7 @@ private:
     std::string Hf[2];
 };
 
-// 经济型花束工厂
+// 经济型花束工�?
 class EconomyBouquetFactoryRQX : public IBouquetFactoryRQX {
 public:
     IBouquetRQX* createBouquet() override;
@@ -96,7 +96,7 @@ void EconomyBouquetRQX::deliver(std::string address) {
 
 IBouquetRQX* HighEndBouquetFactoryRQX::createBouquet() {
     cout << "Create a high-end bouquet.*********" << endl;
-    // 实际创建高端花束的代码
+    // 实际创建高端花束的代�?
     Hf[0] = "Freudian rose";
     Hf[1] = "Lan Dai";
     std::cout << Hf[0] << ' ' << Hf[1] << std::endl;
