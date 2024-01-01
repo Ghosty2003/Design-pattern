@@ -17,7 +17,7 @@ void FloristServant_wwj::replenishStock(vector<Flower_wwj> flowers) {
 	cout << "开始管理库存" << endl;
 	int len = flowers.size();
 	for (int i = 0; i < len; i++) {
-		cout <<  flowers[i].getName()<<"的库存: " << flowers[i].getNums() << "盆" << endl;
+		cout <<  flowers[i].getName()<<"的库存" << flowers[i].getNums() << "盆" << endl;
 	}
 	cout << "库存管理结束" << endl;
 }
