@@ -20,6 +20,10 @@
 #include"../Lazy/LazyFlowerShop.h"
 #include"../PublishSubscribe/PublishSubscribe.h"
 #include"../Single/Single.h"
+
+#include"../Mediator/Mediator.h"
+#include"../TransferObject/TransferObject.h"
+
 #include"../Iterator/Iterator.h"
 #include"../State/State.h"
 #include"../Visitor/Visitor.h"
@@ -29,6 +33,7 @@
 #include"../Interpreter/interpreter.h"
 #include"../Objectpool/objectpool.h"
 #include"../Nullobject/nullobject.h"
+
 
 using namespace std;
 
@@ -135,7 +140,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "mediator")
 	{
-		//testMediator();
+		testMediator();
 	}
 	else if (request == "memento")
 	{
@@ -183,7 +188,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "transferObject")
 	{
-		//testTransferObject();
+		testTransferObject();
 	}
 	else if (request == "visitor")
 	{
@@ -276,6 +281,7 @@ void outputScene(string request) {
 	}
 	else if (request == "templateMethod") {
 		cout << "把花卉的生产定义成一个模板，其中包含选择种子、种植、浇水、施肥。这些具体的步骤可以由不同类的花提供，以适应不同花卉的生长需求。";
+
 	}
 	else if (request == "transferObject") {
 		cout << "";
