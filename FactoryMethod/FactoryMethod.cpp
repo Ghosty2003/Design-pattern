@@ -2,22 +2,22 @@
 
 void FlowerShopClientCode(const aya_FlowerShop &flowerShop, int quantity)
 {
-    std::cout << "æ¬¢è¿Žå…‰ä¸´" << flowerShop.show(quantity) << std::endl;
+    std::cout << "»¶Ó­¹âÁÙ" << flowerShop.show(quantity) << std::endl;
 }
 
 void testFactoryMethod()
 {
-    std::cout << "è´­ä¹°è€…1ï¼šè±ªåŽèŠ±åº—\n";
+    std::cout << "¹ºÂòÕß1£ººÀ»ª»¨µê\n";
     aya_FlowerShop *luxuryShop = new aya_LuxuryFlowerShop();
     FlowerShopClientCode(*luxuryShop, 3); // Buying 3 bouquets
     std::cout << std::endl;
 
-    std::cout << "è´­ä¹°è€…2ï¼šæ ‡å‡†èŠ±åº—\n";
+    std::cout << "¹ºÂòÕß2£º±ê×¼»¨µê\n";
     aya_FlowerShop *standardShop = new aya_StandardFlowerShop();
     FlowerShopClientCode(*standardShop, 5); // Buying 5 bouquets
     std::cout << std::endl;
 
-    std::cout << "è´­ä¹°è€…3ï¼šç»æµŽèŠ±åº—\n";
+    std::cout << "¹ºÂòÕß3£º¾­¼Ã»¨µê\n";
     aya_FlowerShop *budgetShop = new aya_BudgetFlowerShop();
     FlowerShopClientCode(*budgetShop, 2); // Buying 2 bouquets
     std::cout << std::endl;

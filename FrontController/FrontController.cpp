@@ -28,12 +28,45 @@
 
 using namespace std;
 
+void displayFloristSign() {
+
+    const char* sign[] = {
+        "************************************************************************",
+		"*.___        __     __________.__                                      *", 
+		"*|   | ____ |  | __ \\______   \\  |   ____  ______ __________   _____   *",  
+		"*|   |/    \\|  |/ /  |    |  _/  |  /  _ \\/  ___//  ___/  _ \\ /     \\  *",  
+		"*|   |   |  \\    <   |    |   \\  |_(  <_> )___ \\ \\___ (  <_> )  Y Y  \\ *",  
+		"*|___|___| _/__|_ \\  |____|_  /____/\\____/____  >____  >____/|__|_|  / *",  
+		"*                                                                      *",  
+		"************************************************************************", 
+
+    };
+
+    // ±È¿˙≤¢¥Ú”°√ø“ª––
+    for (int i = 0; i < 8; i++) {
+		if(i==0){
+			cct_setcolor(COLOR_BLACK, COLOR_PINK);
+		}
+		else if(i==7){
+			cct_setcolor(COLOR_BLACK, COLOR_PINK);
+		}
+		else{
+			cct_setcolor(COLOR_BLACK, COLOR_HYELLOW);
+		}
+
+        std::cout << sign[i] << std::endl;
+    }
+
+    // ÷ÿ÷√Œ™ƒ¨»œ—’…´
+    cct_setcolor();
+}
+
 void Dispatcher::dispatch(string request)
 {
-	// if (request == "abstractFactory")
-	// {
-	// 	testAbstractFactory();
-	// }
+	if (request == "abstractFactory")
+	{
+		testAbstractFactory();
+	}
 
 	// else
 	 if (request == "adapter")
@@ -118,7 +151,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "prototype")
 	{
-		testPrototype();
+		//testPrototype();
 	}
 	else if (request == "proxy")
 	{
@@ -161,7 +194,7 @@ void Dispatcher::dispatch(string request)
 
 //
 void outputScene(string request) {
-	cct_setcolor(COLOR_BLACK, COLOR_HBLUE);
+	cct_setcolor(COLOR_BLACK, COLOR_CYAN);
 	if (request == "compose") {
 		cout << "";
 	}
@@ -175,7 +208,7 @@ void outputScene(string request) {
 		cout << "";
 	}
 	else if (request == "interpreter") {
-		cout << "";
+		cout << "ª®µÍ¿œ∞Âø…“‘œÚ‘±π§∑¢≥ˆπ∫¬Úª® ¯°¢ΩΩÀÆ∫Õ‘ÀÀÕª® ¯µ»“™«Û£¨‘±π§Õ®π˝Ω‚ Õ∆˜÷¥––œ‡πÿ“™«Û°£";
 	}
 	else if (request == "lazyInitialization") {
 		cout << "";
@@ -184,43 +217,43 @@ void outputScene(string request) {
 		cout << "";
 	}
 	else if (request == "strategy") {
-		cout << "";
+		cout << " π”√œ÷¥Ê≤ﬂ¬‘Ω¯––…Ã∆∑º€∏Ò÷∆∂®";
 	}
 	else if (request == "iterator") {
-		cout << "";
+		cout << "ª®µÍ”–“ª∏ˆª®ª‹ø‚¥Ê£¨Õ®π˝ π”√µ¸¥˙∆˜£¨øÕªßø…“‘±È¿˙ª®µÍµƒÀ˘”–ª®ª‹÷÷¿‡°£";
 	}
 	else if (request == "facade") {
 		cout << "";
 	}
 	else if (request == "nullObject") {
-		cout << "";
+		cout << "ª®µÍø…“‘πÕ”∂°¢Ω‚πÕ≤¢»√‘±π§π§◊˜£¨ª®µÍ”–‘±π§ ±ƒ‹πª’˝≥£π§◊˜£¨µ±ª®µÍ√ª”–‘±π§ ±£¨»√ø’‘±π§∂‘œÛ÷¥––ƒ¨»œ≤Ÿ◊˜°£";
 	}
 	else if (request == "servant") {
-		cout << "";
+		cout << "ª®µÍ¿‡Õ®π˝ª®µÍ‘±π§¿‡¿¥ÕÍ≥…ª®µÍµƒπ§◊˜£¨»Áø‚¥Êµƒπ‹¿Ì°¢ª®µƒΩΩπ‡°£";
 	}
 	else if (request == "adapter") {
-		cout << "";
+		cout << "‘⁄ª®µÍ≥°æ∞÷–¥¶¿Ì≤ªÕ¨π©”¶…ÃÃ·π©µƒª®ª‹–≈œ¢°£Õ®π˝  ≈‰∆˜£¨ª®µÍø…“‘Õ≥“ª≤ªÕ¨π©”¶…ÃµƒΩ”ø⁄£¨ π∆‰ƒ‹πª«·À…µÿ’π æª®ª‹–≈œ¢°£";
 	}
 	else if (request == "blackBoard") {
 		cout << "";
 	}
 	else if (request == "bridge") {
-		cout << "";
+		cout << "∂‘≤ªÕ¨∂‘œÛµƒ…Ã∆∑£¨Õ®π˝«≈Ω”—°‘Ò µœ÷–Œ Ω£¨∞¸◊∞Ω¯≤ªÕ¨µƒª®ª‹";
 	}
 	else if (request == "builder") {
-		cout << "";
+		cout << "∂‘√ø± ∂©µ•µƒ’˚∏ˆ∂©µ•Ω¯––π˝≥ÃΩ¯––ππΩ®";
 	}
 	else if (request == "chainOfResponsibility") {
-		cout << "";
+		cout << "‘⁄ª® ¯µƒœ˙ €¡˜≥Ã÷–…Ëº∆“ª∏ˆ‘»Œ¡¥¿¥¥¶¿Ì≤ªÕ¨µƒƒ£ Ω£¨»Áª® ¯µƒ÷∆◊˜°¢ª® ¯µƒ∞¸◊∞∫Õª® ¯µƒœ˙ €°£«Î«ÛΩ´—ÿ‘»Œ¡¥¥´µ›£¨÷±µΩ”–“ª∏ˆ¥¶¿Ì’ﬂƒ‹¥¶¿ÌÀ¸Œ™÷π°£";
 	}
 	else if (request == "command") {
-		cout << "";
+		cout << "œﬂ…œ∂©π∫ª®ª‹µƒπ˝≥Ã π”√√¸¡Óƒ£ Ω£¨”√”⁄œ¬µ•£¨∂©µ•Ω” ’∫Õ∂©µ•≥∑œ˙°£";
 	}
 	else if (request == "observer") {
 		cout << "";
 	}
 	else if (request == "flyWeight") {
-		cout << "";
+		cout << "ø…“‘±ª‘À”√”⁄”≈ªØ∂‘”⁄ª®ª‹∂‘œÛµƒ¥¥Ω®∫Õπ‹¿Ì£¨Ãÿ± «‘⁄¥Ê‘⁄¥Û¡øœ‡À∆ª®ª‹∂‘œÛµƒ«Èøˆœ¬°£»Áπ˚ª®µÍæ≠≥£¥¶¿Ì¥Û¡øœ‡À∆µƒª®ª‹∂‘œÛ£¨±»»Áœ‡Õ¨÷÷¿‡ªÚœ‡Õ¨—’…´µƒª®∂‰£¨ƒ«√¥ π”√œÌ‘™ƒ£ Ωø…“‘œ‘÷¯ºı…Ÿƒ⁄¥Ê’º”√°£";
 	}
 	else if (request == "mediator") {
 		cout << "";
@@ -229,31 +262,31 @@ void outputScene(string request) {
 		cout << "";
 	}
 	else if (request == "objectPool") {
-		cout << "";
+		cout << "πÀøÕ«∞Õ˘ª®µÍπ∫¬Úª® ¯£¨πÀøÕµΩ¿¥ ±¥”∂‘œÛ≥ÿªÒ»°πÀøÕ∂‘œÛ£¨πÀøÕ¿Îø™ ±Ω´∂‘œÛ∑µªÿ∏¯∂‘œÛ≥ÿ°£";
 	}
 	else if (request == "proxy") {
-		cout << "";
+		cout << "‘Àªı¥˙¿Ì‘ÀÀÕª® ¯π§≥ßµƒª® ¯";
 	}
 	else if (request == "state") {
-		cout << "";
+		cout << "ª®µÍƒ⁄µƒª®ª‹“ÚŒ™–¬œ ∂»µƒ≤ªÕ¨∂¯“—≤ªÕ¨µƒ∑Ω Ωœ˙ €ªÚ¥¶¿Ì£¨–¬œ µƒª®ª‹“‘’˝≥£µƒº€∏Ò≥ˆ €£¨…‘Œ¢”–µ„≤ª–¬œ µƒª®ª‹“‘’€ø€º€œ˙ €£¨ø›ŒÆ£¨∆∑¥ŒΩœ≤Óµƒª®ª‹÷±Ω”œ˙ªŸ°£";
 	}
 	else if (request == "templateMethod") {
-		cout << "";
+		cout << "∞—ª®ª‹µƒ…˙≤˙∂®“Â≥…“ª∏ˆƒ£∞Â£¨∆‰÷–∞¸∫¨—°‘Ò÷÷◊”°¢÷÷÷≤°¢ΩΩÀÆ°¢ ©∑ °£’‚–©æﬂÃÂµƒ≤Ω÷Ëø…“‘”…≤ªÕ¨¿‡µƒª®Ã·π©£¨“‘  ”¶≤ªÕ¨ª®ª‹µƒ…˙≥§–Ë«Û°£";
 	}
 	else if (request == "transferObject") {
 		cout << "";
 	}
 	else if (request == "visitor") {
-		cout << "";
+		cout << "‘⁄∏√ƒ£ Ω÷–”–πÀøÕ∫Õ‘±π§¡Ω¿‡∑√Œ ’ﬂ£¨”–ª®ª‹∫Õ≈Ë‘‘¡Ω¿‡±ª∑√Œ ’ﬂ£¨≤ªÕ¨∑√Œ ’ﬂø…“‘∂‘≤ªÕ¨µƒ±ª∑√Œ ’ﬂΩ¯––œ‡”¶µƒ≤Ÿ◊˜°£";
 	}
 	else if (request == "abstractFactory") {
-		cout << "";
+		cout << "≥ÈœÛπ§≥ß…˙≥…∏ﬂ∂Àª® ¯π§≥ß∫Õæ≠º√–Õª® ¯π§≥ß¡Ω∏ˆ◊”π§≥ß£¨√ø∏ˆ◊”π§≥ß…˙≤˙∂‘”¶ª® ¯";
 	}
 	else if (request == "publishSubscribe") {
-		cout << "";
+		cout << "ø‚¥ÊœµÕ≥∑¢≤º∏¸–¬ª® ¯ ˝¡ø£¨¬Úº“ ’µΩ…ÃµÍ…œ–¬ª® ¯–≈œ¢£¨∞¸¿®ª® ¯÷÷¿‡º∞ ˝¡ø";
 	}
 	else if (request == "Single") {
-		cout << "";
+		cout << "Õ≥º∆Õ¯’æ…œπ∫¬Úµƒª® ¯ ˝¡ø£¨œ‘ æ‘¬œ˙¡ø£¨¿‡À∆”⁄Õ¯’æº∆ ˝∆˜";
 	}
 
 	cct_setcolor();
@@ -274,10 +307,8 @@ void FrontController::trackRequest(string request)
 	else if (request == "templateMethod") {
 		request += " && RAII";
 	}
- // √®¬Æ¬æ√ß¬Ω¬Æ√®≈†¬±√ß≈°‚Äû√©¬¢≈ì√®‚Ä∞¬≤√§¬∏¬∫√§¬∫¬Æ√ß¬≤‚Ä∞√®‚Ä∞¬≤√Ø¬ºÀÜ√§¬∫¬Æ√ß¬∫¬¢√®‚Ä∞¬≤√•‚Ä∞¬ç√¶‚Ñ¢¬Ø√Ø¬º≈í√©¬ª‚Äò√®‚Ä∞¬≤√®∆í≈í√¶‚Ñ¢¬Ø√Ø¬º‚Ä∞
     cct_setcolor(COLOR_BLACK, COLOR_PINK);
 
-    // √ß¬ªÀú√•ÀÜ¬∂√§¬∏‚Ç¨√¶≈Ω‚Äô√®≈†¬±
     for (int i = 0; i <= 15; i++) {
         cout << "  **  ";
     }
@@ -290,13 +321,12 @@ void FrontController::trackRequest(string request)
         cout << "  **  ";
     }
     cout<<"\n";
-    // √©‚Ä°¬ç√ß¬Ω¬Æ√©¬¢≈ì√®‚Ä∞¬≤√§¬∏¬∫√©¬ªÀú√®¬Æ¬§√Ø¬ø¬Ω?
     cct_setcolor();
 	outputScene(originRequest);
 	cout << "\n";
 
-	cct_setcolor(COLOR_BLACK, COLOR_HGREEN);
-	cout << "design pattern request:" << request << endl;
+	cct_setcolor(COLOR_BLACK, COLOR_HYELLOW);
+	cout << "Current design pattern:" << request << endl;
 	cct_setcolor();
 }
 
@@ -317,10 +347,9 @@ void testAll() {
 		const int consoleWidth = 80;
 		const int consoleHeight = 32;
 
-		int bg_color = 0; // √®∆í≈í√¶‚Ñ¢¬Ø√©¬¢≈ì√®‚Ä∞¬≤√§¬ª¬£√ß¬†¬Å√Ø¬º≈í√§¬æ‚Äπ√•¬¶‚Äö√©¬ª‚Äò√®‚Ä∞?
-		int fg_color = 14; // √•‚Ä∞¬ç√¶‚Ñ¢¬Ø√©¬¢≈ì√®‚Ä∞¬≤√§¬ª¬£√ß¬†¬Å√Ø¬º≈í√§¬æ‚Äπ√•¬¶‚Äö√©¬ª‚Äû√®‚Ä∞?
+		int bg_color = 0; 
+		int fg_color = 14; 
 
-		// √ß¬ªÀú√•ÀÜ¬∂√©¬°¬∂√©∆í¬®√®¬æ¬π√¶¬°‚Ä†
 		cct_showch(0, 0, '*', bg_color, fg_color, consoleWidth);
 		cout << endl;
 		for (int i = 1; i <= 30; i++) {
@@ -337,14 +366,11 @@ void testAll() {
 			else if (request == "templateMethod") {
 				request += " && RAII";
 			}
-			// √ß¬ªÀú√•ÀÜ¬∂√•¬∑¬¶√®¬æ¬π√¶¬°?
             cct_showch(0, i, '*', bg_color, fg_color, 1);
             cout << " " << i - 1 << "." << request;
-            // √ß¬ªÀú√•ÀÜ¬∂√•¬è¬≥√®¬æ¬π√¶¬°?
             cct_showch(consoleWidth - 1, i, '*', bg_color, fg_color, 1);
 			cout << endl;
 		}
-		// √ß¬ªÀú√•ÀÜ¬∂√•¬∫‚Ä¢√©∆í¬®√®¬æ¬π√¶¬°‚Ä†
     	cct_showch(0, consoleHeight - 1, '*', bg_color, fg_color, consoleWidth);
 		cct_setcolor();
 		int index;

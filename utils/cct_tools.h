@@ -10,7 +10,7 @@
 #include <string.h>
 #include <Windows.h>
 
-/* 定义颜色（用宏定义取代数字，方便记忆） */
+/* 颜色 */
 #define COLOR_BLACK		0	//黑
 #define COLOR_BLUE		1	//蓝
 #define COLOR_GREEN		2	//绿
