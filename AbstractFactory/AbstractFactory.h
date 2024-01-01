@@ -15,13 +15,13 @@ public:
     virtual void deliver(std::string address) = 0;
 };
 
-// 花店�?
+// 花店�??
 class FlowershopRQX : public IBouquetRQX {
 public:
     void deliver(std::string address) override;
 };
 
-// 送货代理�?
+// 送货代理�??
 class DeliveryProxyRQX : public IBouquetRQX {
 private:
     FlowershopRQX* flowerShop;
@@ -42,7 +42,7 @@ public:
     virtual IBouquetRQX* createBouquet() = 0;
 };
 
-// 高端花束�?
+// 高端花束�??
 class HighEndBouquetRQX : public IBouquetRQX {
 public:
     void deliver(std::string address) override;
@@ -62,7 +62,7 @@ private:
     std::string Hf[2];
 };
 
-// 经济型花束工�?
+// 经济型花束工�??
 class EconomyBouquetFactoryRQX : public IBouquetFactoryRQX {
 public:
     IBouquetRQX* createBouquet() override;

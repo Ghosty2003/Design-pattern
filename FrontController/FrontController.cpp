@@ -1,7 +1,7 @@
 #include<iostream>
 #include"FrontController.h"
 #include"../utils/cct_tools.h"
-#include"../Command/Command.h"
+// #include"../Command/Command.h"
 #include"../Builder/Builder.h"
 #include"../Bridge/Bridge.h"
 #include"../Strategy/Strategy.h"
@@ -12,17 +12,21 @@
 #include "../ChainOfResponsibility/ChainOfResponsibility.h"
 #include "../Servant/Servant.h"
 #include "../TemplateMethod/TemplateMethod.h"
-#include "../Prototype/Prototype.h"
+//#include "../Prototype/Prototype.h"
+#include"../Lazy/LazyFlowerShop.h"
+#include"../PublishSubscribe/PublishSubscribe.h"
+#include"../Single/Single.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)
 {
-	if (request == "abstractFactory")
-	{
-		testAbstractFactory();
-	}
+	// if (request == "abstractFactory")
+	// {
+	// 	testAbstractFactory();
+	// }
 
-	else if (request == "adapter")
+	// else
+	 if (request == "adapter")
 	{
 		// testAdaptor();
 	}
@@ -42,10 +46,10 @@ void Dispatcher::dispatch(string request)
 	{
 		testChainOfResponsibility();
 	}
-	else if (request == "command")
-	{
-		testCommand();
-	}
+	// else if (request == "command")
+	// {
+	// 	testCommand();
+	// }
 	else if (request == "compose")
 	{
 		//testCompose();
@@ -80,7 +84,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "lazyInitialization")
 	{
-		//testLazyInitialization();
+		testLazyInitialization();
 	}
 	else if (request == "mediator")
 	{
@@ -104,7 +108,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "prototype")
 	{
-		testPrototype();
+		//testPrototype();
 	}
 	else if (request == "proxy")
 	{
@@ -112,7 +116,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "publishSubscribe")
 	{
-		//testPublishSubscribe();
+		testPublishSubscribe();
 	}
 	else if (request == "servant")
 	{
@@ -137,6 +141,10 @@ void Dispatcher::dispatch(string request)
 	else if (request == "visitor")
 	{
 		//testVisitor();
+	}
+	else if (request == "visitor")
+	{
+		testSingle();
 	}
 }
 
@@ -234,6 +242,9 @@ void outputScene(string request) {
 	else if (request == "publishSubscribe") {
 		cout << "";
 	}
+	else if (request == "Single") {
+		cout << "";
+	}
 
 	cct_setcolor();
 }
@@ -293,11 +304,11 @@ void testAll() {
 	while (1) {
 		cct_cls();
 		
-		const int consoleWidth = 80; 
+		const int consoleWidth = 80;
 		const int consoleHeight = 32;
 
-		int bg_color = 0; // 背景颜色代码，例如黑色
-		int fg_color = 14; // 前景颜色代码，例如黄色
+		int bg_color = 0; // 背景颜色代码，例如黑�?
+		int fg_color = 14; // 前景颜色代码，例如黄�?
 
 		// 绘制顶部边框
 		cct_showch(0, 0, '*', bg_color, fg_color, consoleWidth);
@@ -315,11 +326,11 @@ void testAll() {
 			}
 			else if (request == "templateMethod") {
 				request += " && RAII";
-			}		
-			// 绘制左边框
+			}
+			// 绘制左边�?
             cct_showch(0, i, '*', bg_color, fg_color, 1);
             cout << " " << i - 1 << "." << request;
-            // 绘制右边框
+            // 绘制右边�?
             cct_showch(consoleWidth - 1, i, '*', bg_color, fg_color, 1);
 			cout << endl;
 		}

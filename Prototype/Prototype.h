@@ -1,143 +1,143 @@
-#pragma once
-#include <iostream>
-#include <string>
-#include <unordered_map>
+// #pragma once
+// #include <iostream>
+// #include <string>
+// #include <unordered_map>
 
-using std::string;
+// using std::string;
 
-enum FlowerType
-{
-    ROSE = 0,
-    TULIP,
-    DAISY,
-    SUNFLOWER, // æ–°æ·»åŠ çš„èŠ±çš„ç±»å‹ - å‘æ—¥è‘µ
-    LILY       // æ–°æ·»åŠ çš„èŠ±çš„ç±»å‹ - ç™¾åˆ
-};
+// enum FlowerType
+// {
+//     ROSE = 0,
+//     TULIP,
+//     DAISY,
+//     SUNFLOWER, // ĞÂÌí¼ÓµÄ»¨µÄÀàĞÍ - ÏòÈÕ¿û
+//     LILY       // ĞÂÌí¼ÓµÄ»¨µÄÀàĞÍ - °ÙºÏ
+// };
 
-class Flower
-{
-protected:
-    string flowerName;
-    string color;
+// class Flower
+// {
+// protected:
+//     string flowerName;
+//     string color;
 
-public:
-    Flower() {}
-    Flower(string flowerName)
-        : flowerName(flowerName)
-    {
-    }
-    virtual ~Flower() {}
-    virtual Flower *Clone() const = 0;
-    virtual void Show()
-    {
-        std::cout << "è¿™æœµèŠ±å«" + flowerName + "ï¼Œé¢œè‰²æ˜¯" + color << std::endl;
-    }
-};
+// public:
+//     Flower() {}
+//     Flower(string flowerName)
+//         : flowerName(flowerName)
+//     {
+//     }
+//     virtual ~Flower() {}
+//     virtual Flower *Clone() const = 0;
+//     virtual void Show()
+//     {
+//         std::cout << "Õâ¶ä»¨½Ğ" + flowerName + "£¬ÑÕÉ«ÊÇ" + color << std::endl;
+//     }
+// };
 
-class Rose : public Flower
-{
-public:
-    Rose(string name, string color)
-    {
-        this->flowerName = name;
-        this->color = color;
-    }
+// class Rose : public Flower
+// {
+// public:
+//     Rose(string name, string color)
+//     {
+//         this->flowerName = name;
+//         this->color = color;
+//     }
 
-    Flower *Clone() const override
-    {
-        return new Rose(*this);
-    }
-};
+//     Flower *Clone() const override
+//     {
+//         return new Rose(*this);
+//     }
+// };
 
-class Tulip : public Flower
-{
-public:
-    Tulip(string name, string color)
-    {
-        this->flowerName = name;
-        this->color = color;
-    }
+// class Tulip : public Flower
+// {
+// public:
+//     Tulip(string name, string color)
+//     {
+//         this->flowerName = name;
+//         this->color = color;
+//     }
 
-    Flower *Clone() const override
-    {
-        return new Tulip(*this);
-    }
-};
+//     Flower *Clone() const override
+//     {
+//         return new Tulip(*this);
+//     }
+// };
 
-class Daisy : public Flower
-{
-public:
-    Daisy(string name, string color)
-    {
-        this->flowerName = name;
-        this->color = color;
-    }
+// class Daisy : public Flower
+// {
+// public:
+//     Daisy(string name, string color)
+//     {
+//         this->flowerName = name;
+//         this->color = color;
+//     }
 
-    Flower *Clone() const override
-    {
-        return new Daisy(*this);
-    }
-};
+//     Flower *Clone() const override
+//     {
+//         return new Daisy(*this);
+//     }
+// };
 
-class Sunflower : public Flower
-{
-public:
-    Sunflower(string name, string color)
-    {
-        this->flowerName = name;
-        this->color = color;
-    }
+// class Sunflower : public Flower
+// {
+// public:
+//     Sunflower(string name, string color)
+//     {
+//         this->flowerName = name;
+//         this->color = color;
+//     }
 
-    Flower *Clone() const override
-    {
-        return new Sunflower(*this);
-    }
-};
+//     Flower *Clone() const override
+//     {
+//         return new Sunflower(*this);
+//     }
+// };
 
-class Lily : public Flower
-{
-public:
-    Lily(string name, string color)
-    {
-        this->flowerName = name;
-        this->color = color;
-    }
+// class Lily : public Flower
+// {
+// public:
+//     Lily(string name, string color)
+//     {
+//         this->flowerName = name;
+//         this->color = color;
+//     }
 
-    Flower *Clone() const override
-    {
-        return new Lily(*this);
-    }
-};
+//     Flower *Clone() const override
+//     {
+//         return new Lily(*this);
+//     }
+// };
 
-class Prototype
-{
-private:
-    std::unordered_map<FlowerType, Flower *, std::hash<int>> prototypes_;
+// class Prototype
+// {
+// private:
+//     std::unordered_map<FlowerType, Flower *, std::hash<int>> prototypes_;
 
-public:
-    Prototype()
-    {
-        prototypes_[FlowerType::ROSE] = new Rose("ç«ç‘°", "çº¢è‰²");
-        prototypes_[FlowerType::TULIP] = new Tulip("éƒé‡‘é¦™", "é»„è‰²");
-        prototypes_[FlowerType::DAISY] = new Daisy("é›èŠ", "ç™½è‰²");
-        prototypes_[FlowerType::SUNFLOWER] = new Sunflower("å‘æ—¥è‘µ", "é»„è‰²");
-        prototypes_[FlowerType::LILY] = new Lily("ç™¾åˆ", "ç™½è‰²");
-    }
+// public:
+//     Prototype()
+//     {
+//         prototypes_[FlowerType::ROSE] = new Rose("Ãµ¹å", "ºìÉ«");
+//         prototypes_[FlowerType::TULIP] = new Tulip("Óô½ğÏã", "»ÆÉ«");
+//         prototypes_[FlowerType::DAISY] = new Daisy("³û¾Õ", "°×É«");
+//         prototypes_[FlowerType::SUNFLOWER] = new Sunflower("ÏòÈÕ¿û", "»ÆÉ«");
+//         prototypes_[FlowerType::LILY] = new Lily("°ÙºÏ", "°×É«");
+//     }
 
-    ~Prototype()
-    {
-        delete prototypes_[FlowerType::ROSE];
-        delete prototypes_[FlowerType::TULIP];
-        delete prototypes_[FlowerType::DAISY];
-        delete prototypes_[FlowerType::SUNFLOWER];
-        delete prototypes_[FlowerType::LILY];
-    }
+//     ~Prototype()
+//     {
+//         delete prototypes_[FlowerType::ROSE];
+//         delete prototypes_[FlowerType::TULIP];
+//         delete prototypes_[FlowerType::DAISY];
+//         delete prototypes_[FlowerType::SUNFLOWER];
+//         delete prototypes_[FlowerType::LILY];
+//     }
 
-    Flower *CreatePrototype(FlowerType type)
-    {
-        return prototypes_[type]->Clone();
-    }
-};
+//     Flower *CreatePrototype(FlowerType type)
+//     {
+//         return prototypes_[type]->Clone();
+//     }
+// };
 
-void PrototypeClient(Prototype &prototype);
-void testPrototype();
+// void PrototypeClient(Prototype &prototype);
+// void testPrototype();
