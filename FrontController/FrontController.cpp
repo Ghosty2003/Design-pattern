@@ -20,6 +20,11 @@
 #include"../Lazy/LazyFlowerShop.h"
 #include"../PublishSubscribe/PublishSubscribe.h"
 #include"../Single/Single.h"
+#include"../Iterator/Iterator.h"
+#include"../State/State.h"
+#include"../Visitor/Visitor.h"
+#include"../Facade/Facade.h"
+#include"../Compose/Compose.h"
 
 using namespace std;
 
@@ -57,7 +62,7 @@ void Dispatcher::dispatch(string request)
 	// }
 	else if (request == "compose")
 	{
-		//testCompose();
+		testCompose();
 	}
 	else if (request == "decorator")
 	{
@@ -65,7 +70,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "facade")
 	{
-		//testFacade();
+		testFacade();
 	}
 	else if (request == "factoryMethod")
 	{
@@ -85,7 +90,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "iterator")
 	{
-		//testIterator();
+		testIterator();
 	}
 	else if (request == "lazyInitialization")
 	{
@@ -129,7 +134,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "state")
 	{
-		//testState();
+		testState();
 	}
 	else if (request == "strategy")
 	{
@@ -145,7 +150,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "visitor")
 	{
-		//testVisitor();
+		testVisitor();
 	}
 	else if (request == "visitor")
 	{
