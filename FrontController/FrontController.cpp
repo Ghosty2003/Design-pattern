@@ -20,6 +20,8 @@
 #include"../Lazy/LazyFlowerShop.h"
 #include"../PublishSubscribe/PublishSubscribe.h"
 #include"../Single/Single.h"
+#include"../Mediator/Mediator.h"
+#include"../TransferObject/TransferObject.h"
 
 using namespace std;
 
@@ -93,7 +95,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "mediator")
 	{
-		//testMediator();
+		testMediator();
 	}
 	else if (request == "memento")
 	{
@@ -141,7 +143,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "transferObject")
 	{
-		//testTransferObject();
+		testTransferObject();
 	}
 	else if (request == "visitor")
 	{
@@ -191,7 +193,7 @@ void outputScene(string request) {
 		cout << "";
 	}
 	else if (request == "servant") {
-		cout << "";
+		cout << "下面是雇工模式演示";
 	}
 	else if (request == "adapter") {
 		cout << "";
@@ -206,7 +208,7 @@ void outputScene(string request) {
 		cout << "";
 	}
 	else if (request == "chainOfResponsibility") {
-		cout << "";
+		cout << "下面是责任链模式演示";
 	}
 	else if (request == "command") {
 		cout << "";
@@ -233,7 +235,7 @@ void outputScene(string request) {
 		cout << "";
 	}
 	else if (request == "templateMethod") {
-		cout << "";
+		cout << "下面是模板方法模式演示";
 	}
 	else if (request == "transferObject") {
 		cout << "";
