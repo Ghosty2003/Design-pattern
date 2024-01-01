@@ -15,7 +15,8 @@
 #include"../nullobject/nullobject.h"
 #include"../Adapter/Adapter.h"
 #include"../Flyweight/Flyweight.h"
-
+#include"../FactoryMethod/FactoryMethod.h"
+#include"../Prototype/Prototype.h"
 
 using namespace std;
 
@@ -64,7 +65,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "factoryMethod")
 	{
-		//testFactoryMethod();
+		testFactoryMethod();
 	}
 	else if (request == "filter")
 	{
@@ -108,7 +109,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "prototype")
 	{
-		//testPrototype();
+		testPrototype();
 	}
 	else if (request == "proxy")
 	{
