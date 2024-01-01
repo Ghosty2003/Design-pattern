@@ -36,7 +36,7 @@ const string designPatterns[33] = {
 	"publishSubscribe", //(Subscriber)(Channel)(Publisher)
 	"frontController", 
 	"RAII",  //
-	"singleton" //
+	"single" //
 };
 //, "privateClassData";
 

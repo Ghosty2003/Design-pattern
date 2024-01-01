@@ -1,49 +1,49 @@
-#include "Prototype.h"
+// #include "Prototype.h"
 
-void PrototypeClient(Prototype &prototype)
-{
-    std::cout << "æ¬¢è¿Žå…‰ä¸´èŠ±åº—ï¼Œæˆ‘ä»¬æœ‰ä»¥ä¸‹èŠ±å‰å¯ä¾›é€‰æ‹©ï¼š" << std::endl;
+// void PrototypeClient(Prototype &prototype)
+// {
+//     std::cout << "»¶Ó­¹âÁÙ»¨µê£¬ÎÒÃÇÓÐÒÔÏÂ»¨»Ü¿É¹©Ñ¡Ôñ£º" << std::endl;
 
-    Flower *flower = prototype.CreatePrototype(FlowerType::ROSE);
-    flower->Show();
-    delete flower;
+//     Flower *flower = prototype.CreatePrototype(FlowerType::ROSE);
+//     flower->Show();
+//     delete flower;
 
-    std::cout << "\n";
+//     std::cout << "\n";
 
-    flower = prototype.CreatePrototype(FlowerType::TULIP);
-    flower->Show();
-    delete flower;
+//     flower = prototype.CreatePrototype(FlowerType::TULIP);
+//     flower->Show();
+//     delete flower;
 
-    std::cout << "\n";
+//     std::cout << "\n";
 
-    flower = prototype.CreatePrototype(FlowerType::DAISY);
-    flower->Show();
-    delete flower;
+//     flower = prototype.CreatePrototype(FlowerType::DAISY);
+//     flower->Show();
+//     delete flower;
 
-    std::cout << "\n";
+//     std::cout << "\n";
 
-    flower = prototype.CreatePrototype(FlowerType::SUNFLOWER);
-    flower->Show();
-    delete flower;
+//     flower = prototype.CreatePrototype(FlowerType::SUNFLOWER);
+//     flower->Show();
+//     delete flower;
 
-    std::cout << "\n";
+//     std::cout << "\n";
 
-    flower = prototype.CreatePrototype(FlowerType::LILY);
-    flower->Show();
-    delete flower;
-}
+//     flower = prototype.CreatePrototype(FlowerType::LILY);
+//     flower->Show();
+//     delete flower;
+// }
 
-void testPrototype()
-{
-    Prototype *prototype = new Prototype();
-    PrototypeClient(*prototype);
-    delete prototype;
-}
+// void testPrototype()
+// {
+//     Prototype *prototype = new Prototype();
+//     PrototypeClient(*prototype);
+//     delete prototype;
+// }
 
-int main()
-{
-    // è°ƒç”¨æµ‹è¯•å‡½æ•°
-    testPrototype();
+// int main()
+// {
+//     // µ÷ÓÃ²âÊÔº¯Êý
+//     testPrototype();
 
-    return 0;
-}
+//     return 0;
+// }

@@ -12,7 +12,10 @@
 #include "../ChainOfResponsibility/ChainOfResponsibility.h"
 #include "../Servant/Servant.h"
 #include "../TemplateMethod/TemplateMethod.h"
-#include "../Prototype/Prototype.h"
+//#include "../Prototype/Prototype.h"
+#include"../Lazy/LazyFlowerShop.h"
+#include"../PublishSubscribe/PublishSubscribe.h"
+#include"../Single/Single.h"
 using namespace std;
 
 void Dispatcher::dispatch(string request)
@@ -80,7 +83,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "lazyInitialization")
 	{
-		//testLazyInitialization();
+		testLazyInitialization();
 	}
 	else if (request == "mediator")
 	{
@@ -104,7 +107,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "prototype")
 	{
-		testPrototype();
+		//testPrototype();
 	}
 	else if (request == "proxy")
 	{
@@ -112,7 +115,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "publishSubscribe")
 	{
-		//testPublishSubscribe();
+		testPublishSubscribe();
 	}
 	else if (request == "servant")
 	{
@@ -137,6 +140,10 @@ void Dispatcher::dispatch(string request)
 	else if (request == "visitor")
 	{
 		//testVisitor();
+	}
+	else if (request == "visitor")
+	{
+		testSingle();
 	}
 }
 
