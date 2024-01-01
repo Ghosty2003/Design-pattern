@@ -4,15 +4,15 @@ using namespace std;
 
 const string designPatterns[33] = {
 
-	"compose", 
+	"compose",
 	"decorator",
 	"factoryMethod",
 	"filter",
-	"interpreter", 
+	"interpreter",
 	"lazyInitialization",
 	"prototype",
 	"strategy",
-	"iterator",// 
+	"iterator",//
 	"facade",//
 	"nullObject", //
 	"servant", //
@@ -34,7 +34,7 @@ const string designPatterns[33] = {
 	"visitor",//
 	"abstractFactory",  //
 	"publishSubscribe", //(Subscriber)(Channel)(Publisher)
-	"frontController", 
+	"frontController",
 	"RAII",  //
 	"single" //
 };
@@ -63,3 +63,4 @@ public:
 };
 
 void testAll();
+
