@@ -2,12 +2,10 @@
 #include<iostream>
 using namespace std;
 
-const string designPatterns[33] = {
+const string designPatterns[25] = {
 
 	"compose",
-	"decorator",
 	"factoryMethod",
-	"filter",
 	"interpreter",
 	"lazyInitialization",
 	"prototype",
@@ -17,25 +15,19 @@ const string designPatterns[33] = {
 	"nullObject", //
 	"servant", //
 	"adapter",//
-	"blackBoard", //
 	"bridge",//
 	"builder",//
 	"chainOfResponsibility", //
 	"command", //
-	"observer",//(Observer)
 	"flyWeight", //
-	"mediator",//(Mediator)
-	"memento",  //
 	"objectPool", //
 	"proxy",//
 	"state",//
 	"templateMethod",//
-	"transferObject",//
 	"visitor",//
 	"abstractFactory",  //
 	"publishSubscribe", //(Subscriber)(Channel)(Publisher)
 	"frontController",
-	"RAII",  //
 	"single" //
 };
 //, "privateClassData";

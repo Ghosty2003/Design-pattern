@@ -14,10 +14,10 @@ int main()
 	Dispatcher dispatcher;
 	FrontController frontController;
 	frontController.set(&dispatcher);
-	const string noTestPattern[] = { "frontController", "RAII", "singleton"}; //���ϲ������ģ�?
+	const string noTestPattern[] = { "frontController", "RAII", "singleton"}; 
 
 
-	for (int i = 0; i < 30; i++)
+	for (int i = 0; i < 25; i++)
 	{
 		bool continueFlag = false;
 		for (auto str : noTestPattern) {

@@ -1,6 +1,5 @@
 // SingletonFlowerShop.cpp
 
-#pragma once
 
 #include "Single.h"
 
