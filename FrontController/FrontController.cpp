@@ -9,6 +9,10 @@
 #include"../AbstractFactory/AbstractFactory.h"
 #include"../Adapter/Adapter.h"
 #include"../Flyweight/Flyweight.h"
+
+#include"../FactoryMethod/FactoryMethod.h"
+#include"../Prototype/Prototype.h"
+
 #include "../ChainOfResponsibility/ChainOfResponsibility.h"
 #include "../Servant/Servant.h"
 #include "../TemplateMethod/TemplateMethod.h"
@@ -16,6 +20,7 @@
 #include"../Lazy/LazyFlowerShop.h"
 #include"../PublishSubscribe/PublishSubscribe.h"
 #include"../Single/Single.h"
+
 using namespace std;
 
 void Dispatcher::dispatch(string request)
@@ -64,7 +69,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "factoryMethod")
 	{
-		//testFactoryMethod();
+		testFactoryMethod();
 	}
 	else if (request == "filter")
 	{
@@ -108,7 +113,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "prototype")
 	{
-		//testPrototype();
+		testPrototype();
 	}
 	else if (request == "proxy")
 	{
@@ -264,10 +269,10 @@ void FrontController::trackRequest(string request)
 	else if (request == "templateMethod") {
 		request += " && RAII";
 	}
- // 设置花的颜色为亮粉色（亮红色前景，黑色背景）
+ // è®¾ç½®èŠ±çš„é¢œè‰²ä¸ºäº®ç²‰è‰²ï¼ˆäº®çº¢è‰²å‰æ™¯ï¼Œé»‘è‰²èƒŒæ™¯ï¼‰
     cct_setcolor(COLOR_BLACK, COLOR_PINK);
 
-    // 绘制一排花
+    // ç»˜åˆ¶ä¸€æŽ’èŠ±
     for (int i = 0; i <= 15; i++) {
         cout << "  **  ";
     }
@@ -280,7 +285,7 @@ void FrontController::trackRequest(string request)
         cout << "  **  ";
     }
     cout<<"\n";
-    // 重置颜色为默认�?
+    // é‡ç½®é¢œè‰²ä¸ºé»˜è®¤ï¿½?
     cct_setcolor();
 	outputScene(originRequest);
 	cout << "\n";
@@ -307,10 +312,10 @@ void testAll() {
 		const int consoleWidth = 80;
 		const int consoleHeight = 32;
 
-		int bg_color = 0; // 背景颜色代码，例如黑�?
-		int fg_color = 14; // 前景颜色代码，例如黄�?
+		int bg_color = 0; // èƒŒæ™¯é¢œè‰²ä»£ç ï¼Œä¾‹å¦‚é»‘è‰?
+		int fg_color = 14; // å‰æ™¯é¢œè‰²ä»£ç ï¼Œä¾‹å¦‚é»„è‰?
 
-		// 绘制顶部边框
+		// ç»˜åˆ¶é¡¶éƒ¨è¾¹æ¡†
 		cct_showch(0, 0, '*', bg_color, fg_color, consoleWidth);
 		cout << endl;
 		for (int i = 1; i <= 30; i++) {
@@ -327,14 +332,14 @@ void testAll() {
 			else if (request == "templateMethod") {
 				request += " && RAII";
 			}
-			// 绘制左边�?
+			// ç»˜åˆ¶å·¦è¾¹æ¡?
             cct_showch(0, i, '*', bg_color, fg_color, 1);
             cout << " " << i - 1 << "." << request;
-            // 绘制右边�?
+            // ç»˜åˆ¶å³è¾¹æ¡?
             cct_showch(consoleWidth - 1, i, '*', bg_color, fg_color, 1);
 			cout << endl;
 		}
-		// 绘制底部边框
+		// ç»˜åˆ¶åº•éƒ¨è¾¹æ¡†
     	cct_showch(0, consoleHeight - 1, '*', bg_color, fg_color, consoleWidth);
 		cct_setcolor();
 		int index;

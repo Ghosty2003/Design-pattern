@@ -1,49 +1,51 @@
-// #include "Prototype.h"
 
-// void PrototypeClient(Prototype &prototype)
-// {
-//     std::cout << "»¶Ó­¹âÁÙ»¨µê£¬ÎÒÃÇÓĞÒÔÏÂ»¨»Ü¿É¹©Ñ¡Ôñ£º" << std::endl;
+#include "Prototype.h"
 
-//     Flower *flower = prototype.CreatePrototype(FlowerType::ROSE);
-//     flower->Show();
-//     delete flower;
+void aya_PrototypeClient(aya_Prototype &prototype)
+{
+    std::cout << "å¨†ãˆ£ç¹‹éå¤‰å¤é‘ºåç°µé”›å±¾åœæµ î„æ¹æµ ãƒ¤ç¬…é‘ºåå´é™îˆ™ç·µé–«å¤‹å«¨é”›ï¿½" << std::endl;
 
-//     std::cout << "\n";
+    aya_Flower *flower = prototype.CreatePrototype(aya_FlowerType::aya_ROSE);
+    flower->Show();
+    delete flower;
 
-//     flower = prototype.CreatePrototype(FlowerType::TULIP);
-//     flower->Show();
-//     delete flower;
+    std::cout << "\n";
 
-//     std::cout << "\n";
+    flower = prototype.CreatePrototype(aya_FlowerType::aya_TULIP);
+    flower->Show();
+    delete flower;
 
-//     flower = prototype.CreatePrototype(FlowerType::DAISY);
-//     flower->Show();
-//     delete flower;
+    std::cout << "\n";
 
-//     std::cout << "\n";
+    flower = prototype.CreatePrototype(aya_FlowerType::aya_DAISY);
+    flower->Show();
+    delete flower;
 
-//     flower = prototype.CreatePrototype(FlowerType::SUNFLOWER);
-//     flower->Show();
-//     delete flower;
+    std::cout << "\n";
 
-//     std::cout << "\n";
+    flower = prototype.CreatePrototype(aya_FlowerType::aya_SUNFLOWER);
+    flower->Show();
+    delete flower;
 
-//     flower = prototype.CreatePrototype(FlowerType::LILY);
-//     flower->Show();
-//     delete flower;
-// }
+    std::cout << "\n";
 
-// void testPrototype()
-// {
-//     Prototype *prototype = new Prototype();
-//     PrototypeClient(*prototype);
-//     delete prototype;
-// }
+    flower = prototype.CreatePrototype(aya_FlowerType::aya_LILY);
+    flower->Show();
+    delete flower;
+}
+
+void testPrototype()
+{
+    aya_Prototype *prototype = new aya_Prototype();
+    aya_PrototypeClient(*prototype);
+    delete prototype;
+}
 
 // int main()
 // {
-//     // µ÷ÓÃ²âÊÔº¯Êı
+//     // ç’‹å†ªæ•¤å¨´å¬­ç˜¯é‘èŠ¥æšŸ
 //     testPrototype();
 
 //     return 0;
 // }
+

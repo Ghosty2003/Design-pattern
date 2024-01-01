@@ -1,143 +1,144 @@
-// #pragma once
-// #include <iostream>
-// #include <string>
-// #include <unordered_map>
 
-// using std::string;
+#pragma once
+#include <iostream>
+#include <string>
+#include <unordered_map>
 
-// enum FlowerType
-// {
-//     ROSE = 0,
-//     TULIP,
-//     DAISY,
-//     SUNFLOWER, // ĞÂÌí¼ÓµÄ»¨µÄÀàĞÍ - ÏòÈÕ¿û
-//     LILY       // ĞÂÌí¼ÓµÄ»¨µÄÀàĞÍ - °ÙºÏ
-// };
+using std::string;
 
-// class Flower
-// {
-// protected:
-//     string flowerName;
-//     string color;
+enum aya_FlowerType
+{
+    aya_ROSE = 0,
+    aya_TULIP,
+    aya_DAISY,
+    aya_SUNFLOWER, // é‚ç‰ˆåŠé”çŠµæ®‘é‘ºè¾©æ®‘ç»«è¯²ç€· - éšæˆæ£©é’ï¿½
+    aya_LILY       // é‚ç‰ˆåŠé”çŠµæ®‘é‘ºè¾©æ®‘ç»«è¯²ç€· - é§æƒ§æ‚
+};
 
-// public:
-//     Flower() {}
-//     Flower(string flowerName)
-//         : flowerName(flowerName)
-//     {
-//     }
-//     virtual ~Flower() {}
-//     virtual Flower *Clone() const = 0;
-//     virtual void Show()
-//     {
-//         std::cout << "Õâ¶ä»¨½Ğ" + flowerName + "£¬ÑÕÉ«ÊÇ" + color << std::endl;
-//     }
-// };
+class aya_Flower
+{
+protected:
+    string flowerName;
+    string color;
 
-// class Rose : public Flower
-// {
-// public:
-//     Rose(string name, string color)
-//     {
-//         this->flowerName = name;
-//         this->color = color;
-//     }
+public:
+    aya_Flower() {}
+    aya_Flower(string flowerName)
+        : flowerName(flowerName)
+    {
+    }
+    virtual ~aya_Flower() {}
+    virtual aya_Flower *Clone() const = 0;
+    virtual void Show()
+    {
+        std::cout << "æ©æ¬æ¹¹é‘ºåå½¨" + flowerName + "é”›å²„î–é‘¹å‰æ§¸" + color << std::endl;
+    }
+};
 
-//     Flower *Clone() const override
-//     {
-//         return new Rose(*this);
-//     }
-// };
+class aya_Rose : public aya_Flower
+{
+public:
+    aya_Rose(string name, string color)
+    {
+        this->flowerName = name;
+        this->color = color;
+    }
 
-// class Tulip : public Flower
-// {
-// public:
-//     Tulip(string name, string color)
-//     {
-//         this->flowerName = name;
-//         this->color = color;
-//     }
+    aya_Flower *Clone() const override
+    {
+        return new aya_Rose(*this);
+    }
+};
 
-//     Flower *Clone() const override
-//     {
-//         return new Tulip(*this);
-//     }
-// };
+class aya_Tulip : public aya_Flower
+{
+public:
+    aya_Tulip(string name, string color)
+    {
+        this->flowerName = name;
+        this->color = color;
+    }
 
-// class Daisy : public Flower
-// {
-// public:
-//     Daisy(string name, string color)
-//     {
-//         this->flowerName = name;
-//         this->color = color;
-//     }
+    aya_Flower *Clone() const override
+    {
+        return new aya_Tulip(*this);
+    }
+};
 
-//     Flower *Clone() const override
-//     {
-//         return new Daisy(*this);
-//     }
-// };
+class aya_Daisy : public aya_Flower
+{
+public:
+    aya_Daisy(string name, string color)
+    {
+        this->flowerName = name;
+        this->color = color;
+    }
 
-// class Sunflower : public Flower
-// {
-// public:
-//     Sunflower(string name, string color)
-//     {
-//         this->flowerName = name;
-//         this->color = color;
-//     }
+    aya_Flower *Clone() const override
+    {
+        return new aya_Daisy(*this);
+    }
+};
 
-//     Flower *Clone() const override
-//     {
-//         return new Sunflower(*this);
-//     }
-// };
+class aya_Sunflower : public aya_Flower
+{
+public:
+    aya_Sunflower(string name, string color)
+    {
+        this->flowerName = name;
+        this->color = color;
+    }
 
-// class Lily : public Flower
-// {
-// public:
-//     Lily(string name, string color)
-//     {
-//         this->flowerName = name;
-//         this->color = color;
-//     }
+    aya_Flower *Clone() const override
+    {
+        return new aya_Sunflower(*this);
+    }
+};
 
-//     Flower *Clone() const override
-//     {
-//         return new Lily(*this);
-//     }
-// };
+class aya_Lily : public aya_Flower
+{
+public:
+    aya_Lily(string name, string color)
+    {
+        this->flowerName = name;
+        this->color = color;
+    }
 
-// class Prototype
-// {
-// private:
-//     std::unordered_map<FlowerType, Flower *, std::hash<int>> prototypes_;
+    aya_Flower *Clone() const override
+    {
+        return new aya_Lily(*this);
+    }
+};
 
-// public:
-//     Prototype()
-//     {
-//         prototypes_[FlowerType::ROSE] = new Rose("Ãµ¹å", "ºìÉ«");
-//         prototypes_[FlowerType::TULIP] = new Tulip("Óô½ğÏã", "»ÆÉ«");
-//         prototypes_[FlowerType::DAISY] = new Daisy("³û¾Õ", "°×É«");
-//         prototypes_[FlowerType::SUNFLOWER] = new Sunflower("ÏòÈÕ¿û", "»ÆÉ«");
-//         prototypes_[FlowerType::LILY] = new Lily("°ÙºÏ", "°×É«");
-//     }
+class aya_Prototype
+{
+private:
+    std::unordered_map<aya_FlowerType, aya_Flower *, std::hash<int>> prototypes_;
 
-//     ~Prototype()
-//     {
-//         delete prototypes_[FlowerType::ROSE];
-//         delete prototypes_[FlowerType::TULIP];
-//         delete prototypes_[FlowerType::DAISY];
-//         delete prototypes_[FlowerType::SUNFLOWER];
-//         delete prototypes_[FlowerType::LILY];
-//     }
+public:
+    aya_Prototype()
+    {
+        prototypes_[aya_FlowerType::aya_ROSE] = new aya_Rose("éœî‚¤æ‡“", "ç»¾ãˆ£å£Š");
+        prototypes_[aya_FlowerType::aya_TULIP] = new aya_Tulip("é–®ä¾€å™¾æ££ï¿½", "æ¦›å‹®å£Š");
+        prototypes_[aya_FlowerType::aya_DAISY] = new aya_Daisy("é—†å¿šå¼·", "é§å€Ÿå£Š");
+        prototypes_[aya_FlowerType::aya_SUNFLOWER] = new aya_Sunflower("éšæˆæ£©é’ï¿½", "æ¦›å‹®å£Š");
+        prototypes_[aya_FlowerType::aya_LILY] = new aya_Lily("é§æƒ§æ‚", "é§å€Ÿå£Š");
+    }
 
-//     Flower *CreatePrototype(FlowerType type)
-//     {
-//         return prototypes_[type]->Clone();
-//     }
-// };
+    ~aya_Prototype()
+    {
+        delete prototypes_[aya_FlowerType::aya_ROSE];
+        delete prototypes_[aya_FlowerType::aya_TULIP];
+        delete prototypes_[aya_FlowerType::aya_DAISY];
+        delete prototypes_[aya_FlowerType::aya_SUNFLOWER];
+        delete prototypes_[aya_FlowerType::aya_LILY];
+    }
 
-// void PrototypeClient(Prototype &prototype);
-// void testPrototype();
+    aya_Flower *CreatePrototype(aya_FlowerType type)
+    {
+        return prototypes_[type]->Clone();
+    }
+};
+
+void PrototypeClient(aya_Prototype &prototype);
+void testPrototype();
