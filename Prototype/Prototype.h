@@ -1,3 +1,4 @@
+
 #pragma once
 #include <iostream>
 #include <string>
@@ -10,8 +11,8 @@ enum aya_FlowerType
     aya_ROSE = 0,
     aya_TULIP,
     aya_DAISY,
-    aya_SUNFLOWER, // 新添加的花的类型 - 向日葵
-    aya_LILY       // 新添加的花的类型 - 百合
+    aya_SUNFLOWER, // 鏂版坊鍔犵殑鑺辩殑绫诲瀷 - 鍚戞棩钁�
+    aya_LILY       // 鏂版坊鍔犵殑鑺辩殑绫诲瀷 - 鐧惧悎
 };
 
 class aya_Flower
@@ -30,7 +31,7 @@ public:
     virtual aya_Flower *Clone() const = 0;
     virtual void Show()
     {
-        std::cout << "这朵花叫" + flowerName + "，颜色是" + color << std::endl;
+        std::cout << "杩欐湹鑺卞彨" + flowerName + "锛岄鑹叉槸" + color << std::endl;
     }
 };
 
@@ -117,11 +118,11 @@ private:
 public:
     aya_Prototype()
     {
-        prototypes_[aya_FlowerType::aya_ROSE] = new aya_Rose("玫瑰", "红色");
-        prototypes_[aya_FlowerType::aya_TULIP] = new aya_Tulip("郁金香", "黄色");
-        prototypes_[aya_FlowerType::aya_DAISY] = new aya_Daisy("雏菊", "白色");
-        prototypes_[aya_FlowerType::aya_SUNFLOWER] = new aya_Sunflower("向日葵", "黄色");
-        prototypes_[aya_FlowerType::aya_LILY] = new aya_Lily("百合", "白色");
+        prototypes_[aya_FlowerType::aya_ROSE] = new aya_Rose("鐜懓", "绾㈣壊");
+        prototypes_[aya_FlowerType::aya_TULIP] = new aya_Tulip("閮侀噾棣�", "榛勮壊");
+        prototypes_[aya_FlowerType::aya_DAISY] = new aya_Daisy("闆忚強", "鐧借壊");
+        prototypes_[aya_FlowerType::aya_SUNFLOWER] = new aya_Sunflower("鍚戞棩钁�", "榛勮壊");
+        prototypes_[aya_FlowerType::aya_LILY] = new aya_Lily("鐧惧悎", "鐧借壊");
     }
 
     ~aya_Prototype()

@@ -1,8 +1,9 @@
+
 #include "Prototype.h"
 
 void aya_PrototypeClient(aya_Prototype &prototype)
 {
-    std::cout << "欢迎光临花店，我们有以下花卉可供选择：" << std::endl;
+    std::cout << "娆㈣繋鍏変复鑺卞簵锛屾垜浠湁浠ヤ笅鑺卞崏鍙緵閫夋嫨锛�" << std::endl;
 
     aya_Flower *flower = prototype.CreatePrototype(aya_FlowerType::aya_ROSE);
     flower->Show();
@@ -42,8 +43,9 @@ void testPrototype()
 
 // int main()
 // {
-//     // 调用测试函数
+//     // 璋冪敤娴嬭瘯鍑芥暟
 //     testPrototype();
 
 //     return 0;
 // }
+

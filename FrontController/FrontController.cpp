@@ -1,33 +1,37 @@
 #include<iostream>
 #include"FrontController.h"
 #include"../utils/cct_tools.h"
-#include"../Command/Command.h"
+// #include"../Command/Command.h"
 #include"../Builder/Builder.h"
 #include"../Bridge/Bridge.h"
 #include"../Strategy/Strategy.h"
 #include"../Proxy/Proxy.h"
 #include"../AbstractFactory/AbstractFactory.h"
-#include "../Servant/Servant.h"
-#include "../ChainOfResponsibility/ChainOfResponsibility.h"
-#include "../TemplateMethod/TemplateMethod.h"
-#include"../interpreter/interpreter.h"
-#include"../objectpool/objectpool.h"
-#include"../nullobject/nullobject.h"
 #include"../Adapter/Adapter.h"
 #include"../Flyweight/Flyweight.h"
+
 #include"../FactoryMethod/FactoryMethod.h"
 #include"../Prototype/Prototype.h"
+
+#include "../ChainOfResponsibility/ChainOfResponsibility.h"
+#include "../Servant/Servant.h"
+#include "../TemplateMethod/TemplateMethod.h"
+//#include "../Prototype/Prototype.h"
+#include"../Lazy/LazyFlowerShop.h"
+#include"../PublishSubscribe/PublishSubscribe.h"
+#include"../Single/Single.h"
 
 using namespace std;
 
 void Dispatcher::dispatch(string request)
 {
-	if (request == "abstractFactory")
-	{
-		testAbstractFactory();
-	}
+	// if (request == "abstractFactory")
+	// {
+	// 	testAbstractFactory();
+	// }
 
-	else if (request == "adapter")
+	// else
+	 if (request == "adapter")
 	{
 		// testAdaptor();
 	}
@@ -47,10 +51,10 @@ void Dispatcher::dispatch(string request)
 	{
 		testChainOfResponsibility();
 	}
-	else if (request == "command")
-	{
-		testCommand();
-	}
+	// else if (request == "command")
+	// {
+	// 	testCommand();
+	// }
 	else if (request == "compose")
 	{
 		//testCompose();
@@ -77,7 +81,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "interpreter")
 	{
-		test_interpreter();
+		//test_interpreter();
 	}
 	else if (request == "iterator")
 	{
@@ -85,7 +89,7 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "lazyInitialization")
 	{
-		//testLazyInitialization();
+		testLazyInitialization();
 	}
 	else if (request == "mediator")
 	{
@@ -97,11 +101,11 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "nullObject")
 	{
-		test_nullobject();
+		//test_nullobject();
 	}
 	else if (request == "objectPool")
 	{
-		test_objectpool();
+		//test_objectpool();
 	}
 	else if (request == "observer")
 	{
@@ -113,11 +117,11 @@ void Dispatcher::dispatch(string request)
 	}
 	else if (request == "proxy")
 	{
-		testProxy();
+		//testAbstractFactory();
 	}
 	else if (request == "publishSubscribe")
 	{
-		//testPublishSubscribe();
+		testPublishSubscribe();
 	}
 	else if (request == "servant")
 	{
@@ -143,7 +147,12 @@ void Dispatcher::dispatch(string request)
 	{
 		//testVisitor();
 	}
+	else if (request == "visitor")
+	{
+		testSingle();
+	}
 }
+
 
 //
 void outputScene(string request) {
@@ -238,6 +247,9 @@ void outputScene(string request) {
 	else if (request == "publishSubscribe") {
 		cout << "";
 	}
+	else if (request == "Single") {
+		cout << "";
+	}
 
 	cct_setcolor();
 }
@@ -257,10 +269,10 @@ void FrontController::trackRequest(string request)
 	else if (request == "templateMethod") {
 		request += " && RAII";
 	}
- // 设置花的颜色为亮粉色（亮红色前景，黑色背景）
+ // è®¾ç½®èŠ±çš„é¢œè‰²ä¸ºäº®ç²‰è‰²ï¼ˆäº®çº¢è‰²å‰æ™¯ï¼Œé»‘è‰²èƒŒæ™¯ï¼‰
     cct_setcolor(COLOR_BLACK, COLOR_PINK);
 
-    // 绘制一排花
+    // ç»˜åˆ¶ä¸€æŽ’èŠ±
     for (int i = 0; i <= 15; i++) {
         cout << "  **  ";
     }
@@ -273,7 +285,7 @@ void FrontController::trackRequest(string request)
         cout << "  **  ";
     }
     cout<<"\n";
-    // 重置颜色为默认值
+    // é‡ç½®é¢œè‰²ä¸ºé»˜è®¤ï¿½?
     cct_setcolor();
 	outputScene(originRequest);
 	cout << "\n";
@@ -293,12 +305,21 @@ void FrontController::dispatchRequest(string request)
 	trackRequest(request);
 	dispatcher->dispatch(request);
 }
-
 void testAll() {
 	while (1) {
 		cct_cls();
-		for (int i = 0; i < 30; i++) {
-			string request = designPatterns[i];
+		
+		const int consoleWidth = 80;
+		const int consoleHeight = 32;
+
+		int bg_color = 0; // èƒŒæ™¯é¢œè‰²ä»£ç ï¼Œä¾‹å¦‚é»‘è‰?
+		int fg_color = 14; // å‰æ™¯é¢œè‰²ä»£ç ï¼Œä¾‹å¦‚é»„è‰?
+
+		// ç»˜åˆ¶é¡¶éƒ¨è¾¹æ¡†
+		cct_showch(0, 0, '*', bg_color, fg_color, consoleWidth);
+		cout << endl;
+		for (int i = 1; i <= 30; i++) {
+			string request = (i == 30) ? "quit" : designPatterns[i - 1];
 			if (request == "observer") {
 				request += " && singleton";
 			}
@@ -311,10 +332,18 @@ void testAll() {
 			else if (request == "templateMethod") {
 				request += " && RAII";
 			}
-			cout << i << "." << request << endl;
+			// ç»˜åˆ¶å·¦è¾¹æ¡?
+            cct_showch(0, i, '*', bg_color, fg_color, 1);
+            cout << " " << i - 1 << "." << request;
+            // ç»˜åˆ¶å³è¾¹æ¡?
+            cct_showch(consoleWidth - 1, i, '*', bg_color, fg_color, 1);
+			cout << endl;
 		}
-		cout << "30.退出\n";
+		// ç»˜åˆ¶åº•éƒ¨è¾¹æ¡†
+    	cct_showch(0, consoleHeight - 1, '*', bg_color, fg_color, consoleWidth);
+		cct_setcolor();
 		int index;
+		cout << endl;
 		cin >> index;
 		if (index == 30) {
 			break;

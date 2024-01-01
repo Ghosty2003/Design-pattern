@@ -13,7 +13,7 @@ void testCommand() {
     FlowerShop shop;
 
     // 创建命令并将其设置到花店
-    auto order1 = std::make_shared<PlaceOrderCommand>(receiver, "Rose Bouquet");
+    auto order1 = std::make_shared<PlaceOrderCommand>(receiver, "郁金香盆栽");
     shop.setCommand(order1);
 
     // 执行命令
@@ -21,7 +21,7 @@ void testCommand() {
     Sleep(500);
 
     // 创建第二个命令
-    auto order2 = std::make_shared<PlaceOrderCommand>(receiver, "Lily Bouquet");
+    auto order2 = std::make_shared<PlaceOrderCommand>(receiver, "香氛薰衣草盆栽");
     shop.setCommand(order2);
 
     // 执行命令

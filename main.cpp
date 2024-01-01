@@ -13,7 +13,7 @@ int main()
 	Dispatcher dispatcher;
 	FrontController frontController;
 	frontController.set(&dispatcher);
-	const string noTestPattern[] = { "frontController", "RAII", "singleton"}; //���ϲ������ģʽ
+	const string noTestPattern[] = { "frontController", "RAII", "singleton"}; //���ϲ������ģ�?
 
 
 	for (int i = 0; i < 30; i++)
