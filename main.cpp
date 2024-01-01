@@ -7,9 +7,10 @@ using namespace std;
 
 
 
+
 int main()
 {
-
+	displayFloristSign();
 	Dispatcher dispatcher;
 	FrontController frontController;
 	frontController.set(&dispatcher);
