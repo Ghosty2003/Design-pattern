@@ -1,7 +1,7 @@
 #include<iostream>
 #include"FrontController.h"
 #include"../utils/cct_tools.h"
-// #include"../Command/Command.h"
+#include"../Command/Command.h"
 #include"../Builder/Builder.h"
 #include"../Bridge/Bridge.h"
 #include"../Strategy/Strategy.h"
@@ -9,14 +9,13 @@
 #include"../AbstractFactory/AbstractFactory.h"
 #include"../Adapter/Adapter.h"
 #include"../Flyweight/Flyweight.h"
-
+//#include "../Adapter/Adapter.h"
 #include"../FactoryMethod/FactoryMethod.h"
 #include"../Prototype/Prototype.h"
 
 #include "../ChainOfResponsibility/ChainOfResponsibility.h"
 #include "../Servant/Servant.h"
 #include "../TemplateMethod/TemplateMethod.h"
-//#include "../Prototype/Prototype.h"
 #include"../Lazy/LazyFlowerShop.h"
 #include"../PublishSubscribe/PublishSubscribe.h"
 #include"../Single/Single.h"
@@ -46,7 +45,7 @@ void displayFloristSign() {
 
     };
 
-    // ÈÅçÂéÜÂπ∂ÊâìÂç∞ÊØè‰∏ÄË°å
+    // ±È¿˙≤¢¥Ú”°√ø“ª
     for (int i = 0; i < 8; i++) {
 		if(i==0){
 			cct_setcolor(COLOR_BLACK, COLOR_PINK);
@@ -61,7 +60,7 @@ void displayFloristSign() {
         std::cout << sign[i] << std::endl;
     }
 
-    // ÈáçÁΩÆ‰∏∫ÈªòËÆ§È¢úËâ≤
+    // ÷ÿ÷√Œ™ƒ¨»œ—’
     cct_setcolor();
 }
 
@@ -73,13 +72,9 @@ void Dispatcher::dispatch(string request)
 	}
 
 	// else
-	 if (request == "adapter")
+	else if (request == "adapter")
 	{
-		// testAdaptor();
-	}
-	else if (request == "blackBoard")
-	{
-		//testBlackBoard();
+		//testAdaptor();
 	}
 	else if (request == "bridge")
 	{
@@ -93,17 +88,13 @@ void Dispatcher::dispatch(string request)
 	{
 		testChainOfResponsibility();
 	}
-	// else if (request == "command")
-	// {
-	// 	testCommand();
-	// }
+	else if (request == "command")
+	{
+		testCommand();
+	}
 	else if (request == "compose")
 	{
 		testCompose();
-	}
-	else if (request == "decorator")
-	{
-		//testDecorate();
 	}
 	else if (request == "facade")
 	{
@@ -112,14 +103,6 @@ void Dispatcher::dispatch(string request)
 	else if (request == "factoryMethod")
 	{
 		testFactoryMethod();
-	}
-	else if (request == "filter")
-	{
-		//testFilter();
-	}
-	else if (request == "flyWeight")
-	{
-		// testFlyweight();
 	}
 	else if (request == "interpreter")
 	{
@@ -133,14 +116,6 @@ void Dispatcher::dispatch(string request)
 	{
 		testLazyInitialization();
 	}
-	else if (request == "mediator")
-	{
-		//testMediator();
-	}
-	else if (request == "memento")
-	{
-		//testMemento();
-	}
 	else if (request == "nullObject")
 	{
 		test_nullobject();
@@ -148,18 +123,6 @@ void Dispatcher::dispatch(string request)
 	else if (request == "objectPool")
 	{
 		test_objectpool();
-	}
-	else if (request == "observer")
-	{
-		//testObserver();
-	}
-	else if (request == "prototype")
-	{
-		//testPrototype();
-	}
-	else if (request == "proxy")
-	{
-		//testAbstractFactory();
 	}
 	else if (request == "publishSubscribe")
 	{
@@ -181,17 +144,18 @@ void Dispatcher::dispatch(string request)
 	{
 		testTemplateMethod();
 	}
-	else if (request == "transferObject")
-	{
-		//testTransferObject();
-	}
+	
 	else if (request == "visitor")
 	{
 		testVisitor();
 	}
-	else if (request == "visitor")
+	else if (request == "single")
 	{
 		testSingle();
+	}
+	else if (request == "flyWeight")
+	{
+		testFlyweight();
 	}
 }
 
@@ -200,97 +164,76 @@ void Dispatcher::dispatch(string request)
 void outputScene(string request) {
 	cct_setcolor(COLOR_BLACK, COLOR_CYAN);
 	if (request == "compose") {
-		cout << "";
-	}
-	else if (request == "decorator") {
-		cout << "";
+		cout << "◊È∫œƒ£ Ωø…“‘”√”⁄ππΩ®ª®µÍ≤˙∆∑µƒ≤„¥ŒΩ·ππ£¨ πµ√πÀøÕƒ‹πª“‘Õ≥“ªµƒ∑Ω Ω≤Èø¥∫Õπ∫¬Úµ•“ªª®ª‹ªÚª® ¯Ã◊◊∞.";
 	}
 	else if (request == "factoryMethod") {
-		cout << "";
-	}
-	else if (request == "filter") {
-		cout << "";
+		cout << "≥ÈœÛπ§≥ß…˙≥…∏ﬂ∂Àª® ¯π§≥ß∫Õæ≠º√–Õª® ¯π§≥ß¡Ω∏ˆ◊”π§≥ß£¨√ø∏ˆ◊”π§≥ß…˙≤˙∂‘”¶ª® ¯";
 	}
 	else if (request == "interpreter") {
-		cout << "Ëä±Â∫óËÄÅÊùøÂèØ‰ª•ÂêëÂëòÂ∑•ÂèëÂá∫Ë¥≠‰π∞Ëä±Êùü„ÄÅÊµáÊ∞¥ÂíåËøêÈÄÅËä±ÊùüÁ≠âË¶ÅÊ±ÇÔºåÂëòÂ∑•ÈÄöËøáËß£ÈáäÂô®ÊâßË°åÁõ∏ÂÖ≥Ë¶ÅÊ±Ç„ÄÇ";
+		cout << "ª®µÍ¿œ∞Âø…“‘œÚ‘±π§∑¢≥ˆπ∫¬Úª® ¯°¢ΩΩÀÆ∫Õ‘ÀÀÕª® ¯µ»“™«Û£¨‘±π§Õ®π˝Ω‚ Õ∆˜÷¥––œ‡πÿ“™«Û";
 	}
 	else if (request == "lazyInitialization") {
-		cout << "";
+		cout << "”√ªß‘⁄≥ı¥ŒΩ¯»ÎœµÕ≥ ±£¨ø…“‘ÃÓ–¥ƒ¨»œª® ¯∆´∫√°¢ ’ªıµÿ÷∑º∞¡™œµ∑Ω Ω£¨ø…π©±ÿ“™ ±◊‘∂ØÃÓ–¥";
 	}
 	else if (request == "prototype") {
-		cout << "";
+		cout << "’π æ¡À‘≠–Õƒ£ Ω°£À¸¥¥Ω®¡Àº∏÷÷ª®ª‹∂‘œÛ£¨‘ –ÌÕ®π˝øÀ¬°∑Ω∑®¥¥Ω®À¸√«µƒ∏±±æ£¨»ª∫Û’π æ∏˜÷÷ª®ª‹µƒ–≈œ¢°£";
 	}
 	else if (request == "strategy") {
-		cout << "‰ΩøÁî®Áé∞Â≠òÁ≠ñÁï•ËøõË°åÂïÜÂìÅ‰ª∑Ê†ºÂà∂ÂÆö";
+		cout << " π”√œ÷¥Ê≤ﬂ¬‘Ω¯––…Ã∆∑º€∏Ò÷∆∂®";
 	}
 	else if (request == "iterator") {
-		cout << "Ëä±Â∫óÊúâ‰∏Ä‰∏™Ëä±ÂçâÂ∫ìÂ≠òÔºåÈÄöËøá‰ΩøÁî®Ëø≠‰ª£Âô®ÔºåÂÆ¢Êà∑ÂèØ‰ª•ÈÅçÂéÜËä±Â∫óÁöÑÊâÄÊúâËä±ÂçâÁßçÁ±ª„ÄÇ";
+		cout << "ª®µÍ”–“ª∏ˆª®ª‹ø‚¥Ê£¨Õ®π˝ π”√µ¸¥˙∆˜£¨øÕªßø…“‘±È¿˙ª®µÍµƒÀ˘”–ª®ª‹÷÷¿‡";
 	}
 	else if (request == "facade") {
-		cout << "";
+		cout << "Õ‚π€ƒ£ Ωø…“‘±ª”√”⁄ºÚªØπÀøÕπ∫ŒÔÃÂ—È£¨ ππÀøÕƒ‹πª«·À…µÿπ∫¬Úª®ª‹°¢∞≤≈≈ªÓ∂ØªÚœÌ ‹ÀÕª®∑˛ŒÒ.";
 	}
 	else if (request == "nullObject") {
-		cout << "Ëä±Â∫óÂèØ‰ª•Èõá‰Ω£„ÄÅËß£ÈõáÂπ∂ËÆ©ÂëòÂ∑•Â∑•‰ΩúÔºåËä±Â∫óÊúâÂëòÂ∑•Êó∂ËÉΩÂ§üÊ≠£Â∏∏Â∑•‰ΩúÔºåÂΩìËä±Â∫óÊ≤°ÊúâÂëòÂ∑•Êó∂ÔºåËÆ©Á©∫ÂëòÂ∑•ÂØπË±°ÊâßË°åÈªòËÆ§Êìç‰Ωú„ÄÇ";
+		cout << "ª®µÍø…“‘πÕ”∂°¢Ω‚πÕ≤¢»√‘±π§π§◊˜£¨ª®µÍ”–‘±π§ ±ƒ‹πª’˝≥£π§◊˜£¨µ±ª®µÍ√ª”–‘±π§ ±£¨»√ø’‘±π§∂‘œÛ÷¥––ƒ¨»œ≤Ÿ◊˜";
 	}
 	else if (request == "servant") {
-		cout << "Ëä±Â∫óÁ±ªÈÄöËøáËä±Â∫óÂëòÂ∑•Á±ªÊù•ÂÆåÊàêËä±Â∫óÁöÑÂ∑•‰ΩúÔºåÂ¶ÇÂ∫ìÂ≠òÁöÑÁÆ°ÁêÜ„ÄÅËä±ÁöÑÊµáÁÅå„ÄÇ";
+		cout << "ª®µÍ¿‡Õ®π˝ª®µÍ‘±π§¿‡¿¥ÕÍ≥…ª®µÍµƒπ§◊˜£¨»Áø‚¥Êµƒπ‹¿Ì°¢ª®µƒΩΩπ‡";
 	}
 	else if (request == "adapter") {
-		cout << "Âú®Ëä±Â∫óÂú∫ÊôØ‰∏≠Â§ÑÁêÜ‰∏çÂêå‰æõÂ∫îÂïÜÊèê‰æõÁöÑËä±Âçâ‰ø°ÊÅØ„ÄÇÈÄöËøáÈÄÇÈÖçÂô®ÔºåËä±Â∫óÂèØ‰ª•Áªü‰∏Ä‰∏çÂêå‰æõÂ∫îÂïÜÁöÑÊé•Âè£Ôºå‰ΩøÂÖ∂ËÉΩÂ§üËΩªÊùæÂú∞Â±ïÁ§∫Ëä±Âçâ‰ø°ÊÅØ„ÄÇ";
-	}
-	else if (request == "blackBoard") {
-		cout << "";
+		cout << "‘⁄ª®µÍ≥°æ∞÷–¥¶¿Ì≤ªÕ¨π©”¶…ÃÃ·π©µƒª®ª‹–≈œ¢°£Õ®π˝  ≈‰∆˜£¨ª®µÍø…“‘Õ≥“ª≤ªÕ¨π©”¶…ÃµƒΩ”ø⁄£¨ π∆‰ƒ‹πª«·À…µÿ’π æª®ª‹–≈œ¢";
 	}
 	else if (request == "bridge") {
-		cout << "ÂØπ‰∏çÂêåÂØπË±°ÁöÑÂïÜÂìÅÔºåÈÄöËøáÊ°•Êé•ÈÄâÊã©ÂÆûÁé∞ÂΩ¢ÂºèÔºåÂåÖË£ÖËøõ‰∏çÂêåÁöÑËä±Âçâ";
+		cout << "∂‘≤ªÕ¨∂‘œÛµƒ…Ã∆∑£¨Õ®π˝«≈Ω”—°‘Ò µœ÷–Œ Ω£¨∞¸◊∞Ω¯≤ªÕ¨µƒª®";
 	}
 	else if (request == "builder") {
-		cout << "ÂØπÊØèÁ¨îËÆ¢ÂçïÁöÑÊï¥‰∏™ËÆ¢ÂçïËøõË°åËøáÁ®ãËøõË°åÊûÑÂª∫";
+		cout << "∂‘√ø± ∂©µ•µƒ’˚∏ˆ∂©µ•Ω¯––π˝≥ÃΩ¯––ππΩ®";
 	}
 	else if (request == "chainOfResponsibility") {
-		cout << "Âú®Ëä±ÊùüÁöÑÈîÄÂîÆÊµÅÁ®ã‰∏≠ËÆæËÆ°‰∏Ä‰∏™Ë¥£‰ªªÈìæÊù•Â§ÑÁêÜ‰∏çÂêåÁöÑÊ®°ÂºèÔºåÂ¶ÇËä±ÊùüÁöÑÂà∂‰Ωú„ÄÅËä±ÊùüÁöÑÂåÖË£ÖÂíåËä±ÊùüÁöÑÈîÄÂîÆ„ÄÇËØ∑Ê±ÇÂ∞ÜÊ≤øË¥£‰ªªÈìæ‰º†ÈÄíÔºåÁõ¥Âà∞Êúâ‰∏Ä‰∏™Â§ÑÁêÜËÄÖËÉΩÂ§ÑÁêÜÂÆÉ‰∏∫Ê≠¢„ÄÇ";
+		cout << "‘⁄ª® ¯µƒœ˙ €¡˜≥Ã÷–…Ëº∆“ª∏ˆ‘»Œ¡¥¿¥¥¶¿Ì≤ªÕ¨µƒƒ£ Ω£¨»Áª® ¯µƒ÷∆◊˜°¢ª® ¯µƒ∞¸◊∞∫Õª® ¯µƒœ˙ €°£«Î«ÛΩ´—ÿ‘»Œ¡¥¥´µ›£¨÷±µΩ”–“ª∏ˆ¥¶¿Ì’ﬂƒ‹¥¶¿ÌÀ¸Œ™öL";
 	}
 	else if (request == "command") {
-		cout << "Á∫ø‰∏äËÆ¢Ë¥≠Ëä±ÂçâÁöÑËøáÁ®ã‰ΩøÁî®ÂëΩ‰ª§Ê®°ÂºèÔºåÁî®‰∫é‰∏ãÂçïÔºåËÆ¢ÂçïÊé•Êî∂ÂíåËÆ¢ÂçïÊí§ÈîÄ„ÄÇ";
-	}
-	else if (request == "observer") {
-		cout << "";
+		cout << "œﬂ…œ∂©π∫ª®ª‹µƒπ˝≥Ã π”√√¸¡Óƒ£ Ω£¨”√”⁄œ¬µ•£¨∂©µ•Ω” ’∫Õ∂©µ•≥∑œ˙";
 	}
 	else if (request == "flyWeight") {
-		cout << "ÂèØ‰ª•Ë¢´ËøêÁî®‰∫é‰ºòÂåñÂØπ‰∫éËä±ÂçâÂØπË±°ÁöÑÂàõÂª∫ÂíåÁÆ°ÁêÜÔºåÁâπÂà´ÊòØÂú®Â≠òÂú®Â§ßÈáèÁõ∏‰ººËä±ÂçâÂØπË±°ÁöÑÊÉÖÂÜµ‰∏ã„ÄÇÂ¶ÇÊûúËä±Â∫óÁªèÂ∏∏Â§ÑÁêÜÂ§ßÈáèÁõ∏‰ººÁöÑËä±ÂçâÂØπË±°ÔºåÊØîÂ¶ÇÁõ∏ÂêåÁßçÁ±ªÊàñÁõ∏ÂêåÈ¢úËâ≤ÁöÑËä±ÊúµÔºåÈÇ£‰πà‰ΩøÁî®‰∫´ÂÖÉÊ®°ÂºèÂèØ‰ª•ÊòæËëóÂáèÂ∞ëÂÜÖÂ≠òÂç†Áî®„ÄÇ";
-	}
-	else if (request == "mediator") {
-		cout << "";
-	}
-	else if (request == "memento") {
-		cout << "";
+		cout << "ø…“‘±ª‘À”√”⁄”≈ªØ∂‘”⁄ª®ª‹∂‘œÛµƒ¥¥Ω®∫Õπ‹¿Ì£¨Ãÿ± «‘⁄¥Ê‘⁄¥Û¡øœ‡À∆ª®ª‹∂‘œÛµƒ«Èøˆœ¬°£»Áπ˚ª®µÍæ≠≥£¥¶¿Ì¥Û¡øœ‡À∆µƒª®ª‹∂‘œÛ£¨±»»Áœ‡Õ¨÷÷¿‡ªÚœ‡Õ¨—’…´µƒª®∂‰£¨ƒ«√¥ π”√œÌ‘™ƒ£ Ωø…“‘œ‘÷¯ºı…Ÿƒ⁄¥Ê’º”√";
 	}
 	else if (request == "objectPool") {
-		cout << "È°æÂÆ¢ÂâçÂæÄËä±Â∫óË¥≠‰π∞Ëä±ÊùüÔºåÈ°æÂÆ¢Âà∞Êù•Êó∂‰ªéÂØπË±°Ê±†Ëé∑ÂèñÈ°æÂÆ¢ÂØπË±°ÔºåÈ°æÂÆ¢Á¶ªÂºÄÊó∂Â∞ÜÂØπË±°ËøîÂõûÁªôÂØπË±°Ê±†„ÄÇ";
+		cout << "πÀøÕ«∞Õ˘ª®µÍπ∫¬Úª® ¯£¨πÀøÕµΩ¿¥ ±¥”∂‘œÛ≥ÿªÒ»°πÀøÕ∂‘œÛ£¨πÀøÕ¿Îø™ ±Ω´∂‘œÛ∑µªÿ∏¯∂‘œÛ≥ÿ";
 	}
 	else if (request == "proxy") {
-		cout << "ËøêË¥ß‰ª£ÁêÜËøêÈÄÅËä±ÊùüÂ∑•ÂéÇÁöÑËä±Êùü";
+		cout << "‘Àªı¥˙¿Ì‘ÀÀÕª® ¯π§≥ßµƒª® ¯";
 	}
 	else if (request == "state") {
-		cout << "Ëä±Â∫óÂÜÖÁöÑËä±ÂçâÂõ†‰∏∫Êñ∞È≤úÂ∫¶ÁöÑ‰∏çÂêåËÄåÂ∑≤‰∏çÂêåÁöÑÊñπÂºèÈîÄÂîÆÊàñÂ§ÑÁêÜÔºåÊñ∞È≤úÁöÑËä±Âçâ‰ª•Ê≠£Â∏∏ÁöÑ‰ª∑Ê†ºÂá∫ÂîÆÔºåÁ®çÂæÆÊúâÁÇπ‰∏çÊñ∞È≤úÁöÑËä±Âçâ‰ª•ÊäòÊâ£‰ª∑ÈîÄÂîÆÔºåÊûØËêéÔºåÂìÅÊ¨°ËæÉÂ∑ÆÁöÑËä±ÂçâÁõ¥Êé•ÈîÄÊØÅ„ÄÇ";
+		cout << "ª®µÍƒ⁄µƒª®ª‹“ÚŒ™–¬œ ∂»µƒ≤ªÕ¨∂¯“—≤ªÕ¨µƒ∑Ω Ωœ˙ €ªÚ¥¶¿Ì£¨–¬œ µƒª®ª‹“‘’˝≥£µƒº€∏Ò≥ˆ €£¨…‘Œ¢”–µ„≤ª–¬œ µƒª®ª‹“‘’€ø€º€œ˙ €£¨ø›ŒÆ£¨∆∑¥ŒΩœ≤Óµƒª®ª‹÷±Ω”œ˙ªŸ";
 	}
 	else if (request == "templateMethod") {
-		cout << "ÊääËä±ÂçâÁöÑÁîü‰∫ßÂÆö‰πâÊàê‰∏Ä‰∏™Ê®°ÊùøÔºåÂÖ∂‰∏≠ÂåÖÂê´ÈÄâÊã©ÁßçÂ≠ê„ÄÅÁßçÊ§ç„ÄÅÊµáÊ∞¥„ÄÅÊñΩËÇ•„ÄÇËøô‰∫õÂÖ∑‰ΩìÁöÑÊ≠•È™§ÂèØ‰ª•Áî±‰∏çÂêåÁ±ªÁöÑËä±Êèê‰æõÔºå‰ª•ÈÄÇÂ∫î‰∏çÂêåËä±ÂçâÁöÑÁîüÈïøÈúÄÊ±Ç„ÄÇ";
-	}
-	else if (request == "transferObject") {
-		cout << "";
+		cout << "∞—ª®ª‹µƒ…˙≤˙∂®“Â≥…“ª∏ˆƒ£∞Â£¨∆‰÷–∞¸∫¨—°‘Ò÷÷◊”°¢÷÷÷≤°¢ΩΩÀÆ°¢ ©∑ °£’‚–©æﬂÃÂµƒ≤Ω÷Ëø…“‘”…≤ªÕ¨¿‡µƒª®Ã·π©£¨“‘  ”¶≤ªÕ¨ª®ª‹µƒ…˙≥§–Ë«Û";
 	}
 	else if (request == "visitor") {
-		cout << "Âú®ËØ•Ê®°Âºè‰∏≠ÊúâÈ°æÂÆ¢ÂíåÂëòÂ∑•‰∏§Á±ªËÆøÈóÆËÄÖÔºåÊúâËä±ÂçâÂíåÁõÜÊ†Ω‰∏§Á±ªË¢´ËÆøÈóÆËÄÖÔºå‰∏çÂêåËÆøÈóÆËÄÖÂèØ‰ª•ÂØπ‰∏çÂêåÁöÑË¢´ËÆøÈóÆËÄÖËøõË°åÁõ∏Â∫îÁöÑÊìç‰Ωú„ÄÇ";
+		cout << "‘⁄∏√ƒ£ Ω÷–”–πÀøÕ∫Õ‘±π§¡Ω¿‡∑√Œ ’ﬂ£¨”–ª®ª‹∫Õ≈Ë‘‘¡Ω¿‡±ª∑√Œ ’ﬂ£¨≤ªÕ¨∑√Œ ’ﬂø…“‘∂‘≤ªÕ¨µƒ±ª∑√Œ ’ﬂΩ¯––œ‡”¶µƒ≤Ÿ◊˜";
 	}
 	else if (request == "abstractFactory") {
-		cout << "ÊäΩË±°Â∑•ÂéÇÁîüÊàêÈ´òÁ´ØËä±ÊùüÂ∑•ÂéÇÂíåÁªèÊµéÂûãËä±ÊùüÂ∑•ÂéÇ‰∏§‰∏™Â≠êÂ∑•ÂéÇÔºåÊØè‰∏™Â≠êÂ∑•ÂéÇÁîü‰∫ßÂØπÂ∫îËä±Êùü";
+		cout << "≥ÈœÛπ§≥ß…˙≥…∏ﬂ∂Àª® ¯π§≥ß∫Õæ≠º√–Õª® ¯π§≥ß¡Ω∏ˆ◊”π§≥ß£¨√ø∏ˆ◊”π§≥ß…˙≤˙∂‘”¶ª®";
 	}
 	else if (request == "publishSubscribe") {
-		cout << "Â∫ìÂ≠òÁ≥ªÁªüÂèëÂ∏ÉÊõ¥Êñ∞Ëä±ÊùüÊï∞ÈáèÔºå‰π∞ÂÆ∂Êî∂Âà∞ÂïÜÂ∫ó‰∏äÊñ∞Ëä±Êùü‰ø°ÊÅØÔºåÂåÖÊã¨Ëä±ÊùüÁßçÁ±ªÂèäÊï∞Èáè";
+		cout << "ø‚¥ÊœµÕ≥∑¢≤º∏¸–¬ª® ¯ ˝¡ø£¨¬Úº“ ’µΩ…ÃµÍ…œ–¬ª® ¯–≈œ¢£¨∞¸¿®ª® ¯÷÷¿‡º∞ ˝";
 	}
 	else if (request == "Single") {
-		cout << "ÁªüËÆ°ÁΩëÁ´ô‰∏äË¥≠‰π∞ÁöÑËä±ÊùüÊï∞ÈáèÔºåÊòæÁ§∫ÊúàÈîÄÈáèÔºåÁ±ª‰ºº‰∫éÁΩëÁ´ôËÆ°Êï∞Âô®";
+		cout << "Õ≥º∆Õ¯’æ…œπ∫¬Úµƒª® ¯ ˝¡ø£¨œ‘ æ‘¬œ˙¡ø£¨¿‡À∆”⁄Õ¯’æº∆ ˝∆˜";
 	}
 
 	cct_setcolor();
@@ -299,17 +242,8 @@ void outputScene(string request) {
 void FrontController::trackRequest(string request)
 {
 	string originRequest = request;
-	if (request == "observer") {
-		request += " && singleton";
-	}
-	else if (request == "memento") {
-		request += " && singleton";
-	}
-	else if (request == "publishSubscribe") {
-		request += " && singleton";
-	}
-	else if (request == "templateMethod") {
-		request += " && RAII";
+	if (request == "AbstractFactory") {
+		request += " && proxy";
 	}
     cct_setcolor(COLOR_BLACK, COLOR_PINK);
 
@@ -349,29 +283,20 @@ void testAll() {
 		cct_cls();
 		
 		const int consoleWidth = 80;
-		const int consoleHeight = 32;
+		const int consoleHeight = 27;
 
 		int bg_color = 0; 
 		int fg_color = 14; 
 
 		cct_showch(0, 0, '*', bg_color, fg_color, consoleWidth);
 		cout << endl;
-		for (int i = 1; i <= 30; i++) {
-			string request = (i == 30) ? "quit" : designPatterns[i - 1];
-			if (request == "observer") {
-				request += " && singleton";
-			}
-			else if (request == "memento") {
-				request += " && singleton";
-			}
-			else if (request == "publishSubscribe") {
-				request += " && singleton";
-			}
-			else if (request == "templateMethod") {
-				request += " && RAII";
+		for (int i = 1; i <= 25; i++) {
+			string request = (i == 25) ? "quit" : designPatterns[i - 1];
+			if (request == "AbstractFactory") {
+				request += " && proxy";
 			}
             cct_showch(0, i, '*', bg_color, fg_color, 1);
-            cout << " " << i - 1 << "." << request;
+            cout << " " << i << "." << request;
             cct_showch(consoleWidth - 1, i, '*', bg_color, fg_color, 1);
 			cout << endl;
 		}
@@ -380,11 +305,11 @@ void testAll() {
 		int index;
 		cout << endl;
 		cin >> index;
-		if (index == 30) {
+		if (index == 25) {
 			break;
 		}
 		FrontController frontController;
-		frontController.dispatchRequest(designPatterns[index]);
+		frontController.dispatchRequest(designPatterns[index-1]);
 		system("pause");
 	}
 }

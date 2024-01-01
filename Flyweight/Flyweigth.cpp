@@ -2,7 +2,7 @@
 #include<iostream>
 #include<string>
 
-int testFlyweight()
+void testFlyweight()
 {
     FlowerFactory flowerFactory;
 
@@ -28,6 +28,5 @@ int testFlyweight()
 
     // 释放资源，通过~FlowerFactory() 实现
 
-    return 0;
 
 }
