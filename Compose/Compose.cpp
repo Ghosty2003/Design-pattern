@@ -1,46 +1,78 @@
 #include "Compose.h"
-#include<sstream>
-#include<string>
+#include <sstream>
+#include <string>
+#include <iostream>
+#include <unordered_map>
 
-// 客户端代码，用于打印花卉组件的操作结果
-void flowerShopClientCode(FlowerComponentGyy* component) {
-    // 获取花卉组件的操作结果
+class FlowerComponent;
+
+void flowerShopClientCode(FlowerComponent* component) {
     string output_ = component->Operation();
 
-    // 解析操作结果并打印
     std::istringstream ss(output_);
     std::string token;
     cout << "*产品详情*：";
     static int count = 1;
-    cct_setcolor(COLOR_BLACK, COLOR_HWHITE - (count++));
-    while (std::getline(ss, token, ',')) {
+    cct_setcolor(COLOR_BLACK, COLOR_HWHITE-(count++));
+    while (std::getline(ss,token,',')) {
+
         std::cout << token;
     }
+    if (count == 15)
+        count = 0;
 }
 
-// 示例方法，用于测试组合模式的功能
-void testCompose() {
-    // 创建单一花卉对象
-    FlowerComponentGyy* product1 = new SingleFlower("*玫瑰花束*");
-    FlowerComponentGyy* product2 = new SingleFlower("*康乃馨花束*");
-    FlowerComponentGyy* product3 = new SingleFlower("*郁金香花束*");
+FlowerComponent* chooseFlowerBouquet() {
+    // 提供花束选项
+    std::cout << "可以自由组合您的套装(输入0退出)：" << std::endl;
+    std::cout << "1. 玫瑰花束  2. 康乃馨花束  3. 郁金香花束" << std::endl;
+    std::cout << "按回车结束组合：" ;
 
-    // 创建花束套装对象，并添加单一花卉对象
-    FlowerComponentGyy* set1 = new FlowerSet("*情人节特别套装*");
+    std::string userInput;
+    std::getline(std::cin, userInput);
+
+    if (userInput == "0") {
+        return nullptr; // 用户选择退出，返回空指针
+    }
+
+    FlowerSet* userBouquet = new FlowerSet("*用户定制套装*");
+
+    for (char c : userInput) {
+        switch (c) {
+        case '1':
+            userBouquet->Add(new SingleFlower("*玫瑰花束*"));
+            break;
+        case '2':
+            userBouquet->Add(new SingleFlower("*康乃馨花束*"));
+            break;
+        case '3':
+            userBouquet->Add(new SingleFlower("*郁金香花束*"));
+            break;
+        default:
+            std::cerr << "无效选项：" << c << std::endl;
+            delete userBouquet;
+            return nullptr; // 用户输入无效选项，返回空指针
+        }
+    }
+
+    return userBouquet;
+}
+
+
+
+void testCompose() {
+    FlowerComponent* product1 = new SingleFlower("*玫瑰花束*");
+    FlowerComponent* product2 = new SingleFlower("*康乃馨花束*");
+    FlowerComponent* product3 = new SingleFlower("*郁金香花束*");
+    FlowerComponent* set1 = new FlowerSet("*情人节特别套装*");
     set1->Add(product1);
     set1->Add(product2);
-
-    // 创建花束套装对象，并添加单一花卉对象和其他花束套装对象
-    FlowerComponentGyy* set2 = new FlowerSet("*生日庆典套装*");
+    FlowerComponent* set2 = new FlowerSet("*生日庆典套装*");
     set2->Add(product3);
-    set2->Add(product3);  // 添加相同的单一花卉对象
+    set2->Add(product3);
     set2->Add(product1);
-
-    // 设置控制台颜色，便于区分输出
     cct_setcolor(COLOR_BLACK, COLOR_WHITE);
     cct_setcolor(COLOR_BLACK, COLOR_HWHITE);
-
-    // 打印单一花卉和花束套装的操作结果
     flowerShopClientCode(product1);
     cct_setcolor(COLOR_BLACK, COLOR_HWHITE);
     std::cout << std::endl;
@@ -53,14 +85,26 @@ void testCompose() {
     flowerShopClientCode(set2);
     cct_setcolor(COLOR_BLACK, COLOR_HWHITE);
     std::cout << std::endl;
-
-    // 恢复控制台颜色
     cct_setcolor(COLOR_BLACK, COLOR_WHITE);
-
-    // 释放动态分配的内存
     delete product1;
     delete product2;
     delete set1;
     delete product3;
     delete set2;
+
+    // 选择用户花束
+    while (1) {
+        FlowerComponent* userBouquet = chooseFlowerBouquet();
+        if (userBouquet == nullptr)
+            break;
+        if (userBouquet) {
+            cct_setcolor(COLOR_BLACK, COLOR_WHITE);
+            cct_setcolor(COLOR_BLACK, COLOR_HWHITE);
+            flowerShopClientCode(userBouquet);
+            cct_setcolor(COLOR_BLACK, COLOR_HWHITE);
+            std::cout << std::endl;
+            cct_setcolor(COLOR_BLACK, COLOR_WHITE);
+            delete userBouquet;
+        }
+    }
 }
