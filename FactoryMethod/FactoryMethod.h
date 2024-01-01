@@ -3,7 +3,7 @@
 #include <string>
 
 /**
- * 产品：花束
+ * 产品：花�?
  */
 class aya_FlowerBouquet
 {
@@ -13,7 +13,7 @@ public:
 };
 
 /**
- * 具体类提供具体实现
+ * 具体类提供具体实�?
  */
 class aya_RoseBouquet : public aya_FlowerBouquet
 {
@@ -57,14 +57,14 @@ public:
         // 创建工厂方法
         aya_FlowerBouquet *bouquet = this->createBouquet(quantity);
         // 输出产品
-        std::string result = getName() + "推出了" + std::to_string(quantity) + "束" + bouquet->show();
+        std::string result = getName() + "推出" + std::to_string(quantity) + "" + bouquet->show();
         delete bouquet;
         return result;
     }
 };
 
 /**
- * 具体的创造者：不同类型的花店
+ * 具体的创造者：不同类型的花�?
  */
 class aya_LuxuryFlowerShop : public aya_FlowerShop
 {
@@ -105,6 +105,6 @@ public:
     }
 };
 
-// 客户并不知道是哪种花店
+// 客户并不知道是哪种花�?
 void FlowerShopClientCode(const aya_FlowerShop &flowerShop, int quantity);
 void testFactoryMethod();
