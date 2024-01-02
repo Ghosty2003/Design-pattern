@@ -35,8 +35,5 @@ void testMediator() {
     delete shop1;
     delete mediator;
 }
+void testMediator();
 
-int main() {
-    testMediator();
-    return 0;
-}

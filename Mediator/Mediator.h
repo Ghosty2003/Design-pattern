@@ -107,4 +107,4 @@ void ConcreteMediator_YH::sellFlower(const string& flower, FlowerShop_YH* shop) 
     cout << "Sell " << flower << " from all flower shops." << endl;
 }
 
-void testMediator();//²âÊÔº¯Êý
+//void testMediator();//²âÊÔº¯Êý
