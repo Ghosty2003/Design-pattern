@@ -19,6 +19,7 @@ const string designPatterns[25] = {
 	"factoryMethod",	//first
 	"prototype",
 	"flyWeight",
+	"single",
 	"strategy",
 	"state",
 	"chainOfResponsibility", //seller
