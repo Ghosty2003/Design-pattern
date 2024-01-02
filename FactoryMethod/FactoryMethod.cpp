@@ -27,8 +27,4 @@ void testFactoryMethod()
     delete budgetShop;
 }
 
-// int main()
-// {
-//     testFactoryMethod();
-//     return 0;
-// }
+void testFactoryMethod();

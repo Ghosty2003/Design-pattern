@@ -1,4 +1,3 @@
-
 #pragma once
 #include <iostream>
 #include <string>
@@ -11,8 +10,8 @@ enum aya_FlowerType
     aya_ROSE = 0,
     aya_TULIP,
     aya_DAISY,
-    aya_SUNFLOWER, // é‚ç‰ˆåŠé”çŠµæ®‘é‘ºè¾©æ®‘ç»«è¯²ç€· - éšæˆæ£©é’ï¿½
-    aya_LILY       // é‚ç‰ˆåŠé”çŠµæ®‘é‘ºè¾©æ®‘ç»«è¯²ç€· - é§æƒ§æ‚
+    aya_SUNFLOWER, // ĞÂÌí¼ÓµÄ»¨µÄÀàĞÍ - ÏòÈÕ¿û
+    aya_LILY       // ĞÂÌí¼ÓµÄ»¨µÄÀàĞÍ - °ÙºÏ
 };
 
 class aya_Flower
@@ -31,7 +30,7 @@ public:
     virtual aya_Flower *Clone() const = 0;
     virtual void Show()
     {
-        std::cout << "æ©æ¬æ¹¹é‘ºåå½¨" + flowerName + "é”›å²„î–é‘¹å‰æ§¸" + color << std::endl;
+        std::cout << "Õâ¶ä»¨½Ğ" + flowerName + "£¬ÑÕÉ«ÊÇ" + color << std::endl;
     }
 };
 
@@ -118,11 +117,11 @@ private:
 public:
     aya_Prototype()
     {
-        prototypes_[aya_FlowerType::aya_ROSE] = new aya_Rose("éœî‚¤æ‡“", "ç»¾ãˆ£å£Š");
-        prototypes_[aya_FlowerType::aya_TULIP] = new aya_Tulip("é–®ä¾€å™¾æ££ï¿½", "æ¦›å‹®å£Š");
-        prototypes_[aya_FlowerType::aya_DAISY] = new aya_Daisy("é—†å¿šå¼·", "é§å€Ÿå£Š");
-        prototypes_[aya_FlowerType::aya_SUNFLOWER] = new aya_Sunflower("éšæˆæ£©é’ï¿½", "æ¦›å‹®å£Š");
-        prototypes_[aya_FlowerType::aya_LILY] = new aya_Lily("é§æƒ§æ‚", "é§å€Ÿå£Š");
+        prototypes_[aya_FlowerType::aya_ROSE] = new aya_Rose("Ãµ¹å", "ºìÉ«");
+        prototypes_[aya_FlowerType::aya_TULIP] = new aya_Tulip("Óô½ğÏã", "»ÆÉ«");
+        prototypes_[aya_FlowerType::aya_DAISY] = new aya_Daisy("³û¾Õ", "°×É«");
+        prototypes_[aya_FlowerType::aya_SUNFLOWER] = new aya_Sunflower("ÏòÈÕ¿û", "»ÆÉ«");
+        prototypes_[aya_FlowerType::aya_LILY] = new aya_Lily("°ÙºÏ", "°×É«");
     }
 
     ~aya_Prototype()

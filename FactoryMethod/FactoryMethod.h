@@ -3,7 +3,7 @@
 #include <string>
 
 /**
- * äº§å“ï¼šèŠ±ï¿½?
+ * ²úÆ·£º»¨??
  */
 class aya_FlowerBouquet
 {
@@ -13,14 +13,14 @@ public:
 };
 
 /**
- * å…·ä½“ç±»æä¾›å…·ä½“å®ï¿½?
+ * ¾ßÌåÀàÌá¹©¾ßÌåÊµ??
  */
 class aya_RoseBouquet : public aya_FlowerBouquet
 {
 public:
     std::string show() const override
     {
-        return "ä¸€æŸç«ç‘°èŠ±";
+        return "Ò»ÊøÃµ¹å»¨";
     }
 };
 
@@ -29,7 +29,7 @@ class aya_LilyBouquet : public aya_FlowerBouquet
 public:
     std::string show() const override
     {
-        return "ä¸€æŸç™¾åˆèŠ±";
+        return "Ò»Êø°ÙºÏ»¨";
     }
 };
 
@@ -38,12 +38,12 @@ class aya_TulipBouquet : public aya_FlowerBouquet
 public:
     std::string show() const override
     {
-        return "ä¸€æŸéƒé‡‘é¦™";
+        return "Ò»ÊøÓô½ğÏã";
     }
 };
 
 /**
- * åˆ›å»ºè€…ï¼šèŠ±åº—
+ * ´´½¨Õß£º»¨µê
  */
 class aya_FlowerShop
 {
@@ -54,17 +54,17 @@ public:
 
     std::string show(int quantity) const
     {
-        // åˆ›å»ºå·¥å‚æ–¹æ³•
+        // ´´½¨¹¤³§·½·¨
         aya_FlowerBouquet *bouquet = this->createBouquet(quantity);
-        // è¾“å‡ºäº§å“
-        std::string result = getName() + "æ¨å‡º" + std::to_string(quantity) + "" + bouquet->show();
+        // Êä³ö²úÆ·
+        std::string result = getName() + "ÍÆ³ö" + std::to_string(quantity) + "" + bouquet->show();
         delete bouquet;
         return result;
     }
 };
 
 /**
- * å…·ä½“çš„åˆ›é€ è€…ï¼šä¸åŒç±»å‹çš„èŠ±ï¿½?
+ * ¾ßÌåµÄ´´ÔìÕß£º²»Í¬ÀàĞÍµÄ»¨??
  */
 class aya_LuxuryFlowerShop : public aya_FlowerShop
 {
@@ -75,7 +75,7 @@ public:
     }
     std::string getName() const override
     {
-        return "è±ªåèŠ±åº—";
+        return "ºÀ»ª»¨µê";
     }
 };
 
@@ -88,7 +88,7 @@ public:
     }
     std::string getName() const override
     {
-        return "æ ‡å‡†èŠ±åº—";
+        return "±ê×¼»¨µê";
     }
 };
 
@@ -101,10 +101,10 @@ public:
     }
     std::string getName() const override
     {
-        return "ç»æµèŠ±åº—";
+        return "¾­¼Ã»¨µê";
     }
 };
 
-// å®¢æˆ·å¹¶ä¸çŸ¥é“æ˜¯å“ªç§èŠ±ï¿½?
+// ¿Í»§²¢²»ÖªµÀÊÇÄÄÖÖ»¨??
 void FlowerShopClientCode(const aya_FlowerShop &flowerShop, int quantity);
 void testFactoryMethod();

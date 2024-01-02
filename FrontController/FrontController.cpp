@@ -50,7 +50,7 @@ void material(){
 			cct_setcolor(COLOR_BLACK, COLOR_PINK);
 		}
 		else if(i==7){
-			cct_setcolor(COLOR_BLACK, COLOR_PINK);
+			cct_setcolor(COLOR_BLACK, COLOR_BLUE);
 		}
 		else{
 			cct_setcolor(COLOR_BLACK, COLOR_HYELLOW);
@@ -81,7 +81,7 @@ void purchase(){
             cct_setcolor(COLOR_BLACK, COLOR_PINK);
         }
         else if (i == 7) {
-            cct_setcolor(COLOR_BLACK, COLOR_PINK);
+            cct_setcolor(COLOR_BLACK, COLOR_BLUE);
         }
         else {
             cct_setcolor(COLOR_BLACK, COLOR_HYELLOW);
@@ -112,7 +112,7 @@ void order(){
 			cct_setcolor(COLOR_BLACK, COLOR_PINK);
 		}
 		else if(i==7){
-			cct_setcolor(COLOR_BLACK, COLOR_PINK);
+			cct_setcolor(COLOR_BLACK, COLOR_BLUE);
 		}
 		else{
 			cct_setcolor(COLOR_BLACK, COLOR_HYELLOW);
@@ -147,7 +147,7 @@ void sell(){
 			cct_setcolor(COLOR_BLACK, COLOR_PINK);
 		}
 		else if(i==7){
-			cct_setcolor(COLOR_BLACK, COLOR_PINK);
+			cct_setcolor(COLOR_BLACK, COLOR_BLUE);
 		}
 		else{
 			cct_setcolor(COLOR_BLACK, COLOR_HYELLOW);
@@ -221,7 +221,7 @@ void displayFloristSign() {
     }
 	cct_setcolor(COLOR_BLACK, COLOR_CYAN);
 	cout<<"欢迎来到水墨花香花店！";
-    // 重置为默认颜
+    // 重置为默认颜色
     cct_setcolor();
 	system("pause");
 }
@@ -232,7 +232,10 @@ void Dispatcher::dispatch(string request)
 	{
 		testAbstractFactory();
 	}
-
+	else if (request == "prototype")
+	{
+		testPrototype();
+	}
 	// else
 	else if (request == "adapter")
 	{
@@ -338,7 +341,7 @@ void outputScene(string request) {
 		cout << "组合模式可以用于构建花店产品的层次结构，使得顾客能够以统一的方式查看和购买单一花卉或花束套装.";
 	}
 	else if (request == "factoryMethod") {
-		cout << "抽象工厂生成高端花束工厂和经济型花束工厂两个子工厂，每个子工厂生产对应花束";
+		cout << "工厂模式实现了花店系统，有抽象的花束类和具体的玫瑰、百合、郁金香花束类。不同花店类型根据需求创建相应花束，展示购买情况。";
 	}
 	else if (request == "interpreter") {
 		cout << "花店老板可以向员工发出购买花束、浇水和运送花束等要求，员工通过解释器执行相关要求";
@@ -374,7 +377,7 @@ void outputScene(string request) {
 		cout << "对每笔订单的整个订单进行过程进行构建";
 	}
 	else if (request == "chainOfResponsibility") {
-		cout << "在花束的销售流程中设计一个责任链来处理不同的模式，如花束的制作、花束的包装和花束的销售。请求将沿责任链传递，直到有一个处理者能处理它为歀";
+		cout << "在花束的销售流程中设计一个责任链来处理不同的模式，如花束的制作、花束的包装和花束的销售。请求将沿责任链传递，直到有一个处理者能处理它";
 	}
 	else if (request == "command") {
 		cout << "线上订购花卉的过程使用命令模式，用于下单，订单接收和订单撤销";
