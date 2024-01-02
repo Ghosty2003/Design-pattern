@@ -10,7 +10,7 @@
 using namespace std;
 
 void FlowershopRQX::deliver(std::string address) {
-    cout << "èŠ±åº—å°†æŠŠèŠ±æŸé€åˆ°ä»¥ä¸‹åœ°å€ï¼š" << address << endl;
+    cout << "»¨µê½«°Ñ»¨ÊøËÍµ½ÒÔÏÂµØÖ·£º" << address << endl;
 }
 
 DeliveryProxyRQX::DeliveryProxyRQX() {
@@ -18,33 +18,33 @@ DeliveryProxyRQX::DeliveryProxyRQX() {
 }
 
 void DeliveryProxyRQX::deliver(std::string address) {
-    cout << "ä»£ç†äººæ”¶åˆ°å¿«é€’è¯·æ±‚åï¼Œå°†ä¸å¤–éƒ¨å¿«é€’å…¬å¸åè°ƒå®Œæˆå¿«é€’ä»»åŠ¡ã€‚" << endl;
+    cout << "´úÀíÈËÊÕµ½¿ìµİÇëÇóºó£¬½«ÓëÍâ²¿¿ìµİ¹«Ë¾Ğ­µ÷Íê³É¿ìµİÈÎÎñ¡£" << endl;
     flowerShop->deliver(address);
 }
 
 void HighEndBouquetRQX::deliver(std::string address) {
-    cout << "é«˜ç«¯èŠ±æŸå°†é€åˆ°ä»¥ä¸‹åœ°å€ï¼š" << address << endl;
+    cout << "¸ß¶Ë»¨Êø½«ËÍµ½ÒÔÏÂµØÖ·£º" << address << endl;
 }
 
 void EconomyBouquetRQX::deliver(std::string address) {
-    cout << "ç»æµå‹èŠ±æŸå°†é€åˆ°ä»¥ä¸‹åœ°å€ï¼š " << address << endl;
+    cout << "¾­¼ÃĞÍ»¨Êø½«ËÍµ½ÒÔÏÂµØÖ·£º " << address << endl;
 }
 
 IBouquetRQX* HighEndBouquetFactoryRQX::createBouquet() {
-    cout << "åˆ›å»ºé«˜ç«¯èŠ±æŸ*********" << endl;
+    cout << "´´½¨¸ß¶Ë»¨Êø*********" << endl;
     // 
-    Hf[0] = "å¼—æ´›ä¼Šå¾·ç«ç‘°";
-    Hf[1] = "å…°é»›";
+    Hf[0] = "¸¥ÂåÒÁµÂÃµ¹å";
+    Hf[1] = "À¼÷ì";
     std::cout << Hf[0] << ' ' << Hf[1] << std::endl;
     return new HighEndBouquetRQX();
 }
 
 IBouquetRQX* EconomyBouquetFactoryRQX::createBouquet() {
 
-    cout << "åˆ›å»ºç»æµå‹èŠ±æŸ*********" << endl;
+    cout << "´´½¨¾­¼ÃĞÍ»¨Êø*********" << endl;
     // 
-    Ef[0] = "æ³¢æ–¯èŠ";
-    Ef[1] = "å‘æ—¥è‘µ";
+    Ef[0] = "²¨Ë¹¾Õ";
+    Ef[1] = "ÏòÈÕ¿û";
 
     std::cout << Ef[0] << ' ' << Ef[1] << std::endl;
     return new EconomyBouquetRQX();
@@ -55,17 +55,17 @@ void testAbstractFactory() {
     IBouquetRQX* deliveryProxy = new DeliveryProxyRQX();
 
 
-    deliveryProxy->deliver("*æ›¼å½»æ–¯ç‰¹ç»´å¤šåˆ©äºšè¡—*");
+    deliveryProxy->deliver("*Âü³¹Ë¹ÌØÎ¬¶àÀûÑÇ½Ö*");
 
     // 
     IBouquetFactoryRQX* highEndFactory = new HighEndBouquetFactoryRQX();
     IBouquetRQX* highEndBouquet = highEndFactory->createBouquet();
 
-    highEndBouquet->deliver("*æ›¼å½»æ–¯ç‰¹ - ç»´å¤šåˆ©äºšè¡— - ç»´å¤šåˆ©äºšæ•™å ‚*");
+    highEndBouquet->deliver("*Âü³¹Ë¹ÌØ - Î¬¶àÀûÑÇ½Ö - Î¬¶àÀûÑÇ½ÌÌÃ*");
 
     IBouquetFactoryRQX* economyFactory = new EconomyBouquetFactoryRQX();
     IBouquetRQX* economyBouquet = economyFactory->createBouquet();
-    economyBouquet->deliver("*æ›¼å½»æ–¯ç‰¹ - ç»´å¤šåˆ©äºšè¡— - æ›¼å½»æ–¯ç‰¹å¤§å­¦*");
+    economyBouquet->deliver("*Âü³¹Ë¹ÌØ - Î¬¶àÀûÑÇ½Ö - Âü³¹Ë¹ÌØ´óÑ§*");
 
 
     delete deliveryProxy;
