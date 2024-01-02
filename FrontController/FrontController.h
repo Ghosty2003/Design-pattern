@@ -6,26 +6,26 @@ const string designPatterns[25] = {
 	"adapter",//first
 	"templateMethod",//material
 	"iterator",//first
-	"command", //
+	"publishSubscribe",
+	"objectPool", 
 	"compose",
+	"command", //
 	"lazyInitialization",
-	"bridge",//
-	"objectPool", //
-	"publishSubscribe", //user
+	"bridge",//user
 	"builder",//first
 	"facade",//
 	"proxy",//
 	"abstractFactory",//orders
-	"state",//first
-	"factoryMethod",
+	"factoryMethod",	//first
 	"prototype",
-	"strategy",
 	"flyWeight",
+	"strategy",
+	"state",
 	"chainOfResponsibility", //seller
 	"visitor",//first
+	"servant", 
 	"interpreter",
-	"nullObject", //
-	"servant", //employee
+	"nullObject", //employee
 };
 //, "privateClassData";
 
