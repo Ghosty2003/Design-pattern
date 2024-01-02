@@ -3,32 +3,30 @@
 using namespace std;
 
 const string designPatterns[25] = {
-
+	"flyWeight", //first
+	"templateMethod",//material
+	"iterator",//first
+	"command", //
 	"compose",
-	"factoryMethod",
-	"interpreter",
 	"lazyInitialization",
+	"bridge",//
+	"objectPool", //
+	"publishSubscribe", //user
+	"builder",//first
+	"facade",//
+	"proxy",//
+	"adapter",//
+	"abstractFactory",//orders
+	"state",//first
+	"factoryMethod",
 	"prototype",
 	"strategy",
-	"iterator",//
-	"facade",//
+	"chainOfResponsibility", //seller
+	"visitor",//first
+	"interpreter",
 	"nullObject", //
-	"servant", //
-	"adapter",//
-	"bridge",//
-	"builder",//
-	"chainOfResponsibility", //
-	"command", //
-	"flyWeight", //
-	"objectPool", //
-	"proxy",//
-	"state",//
-	"templateMethod",//
-	"visitor",//
-	"abstractFactory",  //
-	"publishSubscribe", //(Subscriber)(Channel)(Publisher)
+	"servant", //employee
 	"frontController",
-	"single" //
 };
 //, "privateClassData";
 
