@@ -10,7 +10,7 @@
 using namespace std;
 
 void FlowershopRQX::deliver(std::string address) {
-    cout << "The flower shop will deliver the bouquet to the address:" << address << endl;
+    cout << "花店将把花束送到以下地址：" << address << endl;
 }
 
 DeliveryProxyRQX::DeliveryProxyRQX() {
@@ -18,49 +18,49 @@ DeliveryProxyRQX::DeliveryProxyRQX() {
 }
 
 void DeliveryProxyRQX::deliver(std::string address) {
-    cout << "The agent receives the delivery request and will coordinate with an external courier company to complete the delivery task." << endl;
+    cout << "代理人收到快递请求后，将与外部快递公司协调完成快递任务。" << endl;
     flowerShop->deliver(address);
 }
 
 void HighEndBouquetRQX::deliver(std::string address) {
-    cout << "High-end bouquet will be delivered to the address:" << address << endl;
+    cout << "高端花束将送到以下地址：" << address << endl;
 }
 
 void EconomyBouquetRQX::deliver(std::string address) {
-    cout << "Economical bouquet will be delivered to the address: " << address << endl;
+    cout << "经济型花束将送到以下地址： " << address << endl;
 }
 
 IBouquetRQX* HighEndBouquetFactoryRQX::createBouquet() {
-    cout << "Create a high-end bouquet.*********" << endl;
-    // 实际创建高端花束的代码
-    Hf[0] = "Freudian rose";
-    Hf[1] = "Lan Dai";
+    cout << "创建高端花束*********" << endl;
+    // 
+    Hf[0] = "弗洛伊德玫瑰";
+    Hf[1] = "兰黛";
     std::cout << Hf[0] << ' ' << Hf[1] << std::endl;
     return new HighEndBouquetRQX();
 }
 
 IBouquetRQX* EconomyBouquetFactoryRQX::createBouquet() {
-    cout << "Create an economical bouquet.*********" << endl;
-    // 实际创建经济型花束的代码
-    Ef[0] = "coreopsis";
-    Ef[1] = "sunflower";
+    cout << "创建经济型花束*********" << endl;
+    // 
+    Ef[0] = "波斯菊";
+    Ef[1] = "向日葵";
     std::cout << Ef[0] << ' ' << Ef[1] << std::endl;
     return new EconomyBouquetRQX();
 }
 
 void testAbstractFactory() {
-    // 代理模式示例
+    // 
     IBouquetRQX* deliveryProxy = new DeliveryProxyRQX();
-    deliveryProxy->deliver("*Manchester Victoria Street*");
+    deliveryProxy->deliver("*曼彻斯特维多利亚街*");
 
-    // 抽象工厂模式示例
+    // 
     IBouquetFactoryRQX* highEndFactory = new HighEndBouquetFactoryRQX();
     IBouquetRQX* highEndBouquet = highEndFactory->createBouquet();
-    highEndBouquet->deliver("*Manchester - Victoria Street - Manchester Cathedral*");
+    highEndBouquet->deliver("*曼彻斯特 - 维多利亚街 - 维多利亚教堂*");
 
     IBouquetFactoryRQX* economyFactory = new EconomyBouquetFactoryRQX();
     IBouquetRQX* economyBouquet = economyFactory->createBouquet();
-    economyBouquet->deliver("*Manchester - Victoria Street - Manchester University*");
+    economyBouquet->deliver("*曼彻斯特 - 维多利亚街 - 曼彻斯特大学*");
 
     delete deliveryProxy;
     delete highEndFactory;
