@@ -40,10 +40,12 @@ IBouquetRQX* HighEndBouquetFactoryRQX::createBouquet() {
 }
 
 IBouquetRQX* EconomyBouquetFactoryRQX::createBouquet() {
+
     cout << "创建经济型花束*********" << endl;
     // 
     Ef[0] = "波斯菊";
     Ef[1] = "向日葵";
+
     std::cout << Ef[0] << ' ' << Ef[1] << std::endl;
     return new EconomyBouquetRQX();
 }
@@ -51,16 +53,20 @@ IBouquetRQX* EconomyBouquetFactoryRQX::createBouquet() {
 void testAbstractFactory() {
     // 
     IBouquetRQX* deliveryProxy = new DeliveryProxyRQX();
+
+
     deliveryProxy->deliver("*曼彻斯特维多利亚街*");
 
     // 
     IBouquetFactoryRQX* highEndFactory = new HighEndBouquetFactoryRQX();
     IBouquetRQX* highEndBouquet = highEndFactory->createBouquet();
+
     highEndBouquet->deliver("*曼彻斯特 - 维多利亚街 - 维多利亚教堂*");
 
     IBouquetFactoryRQX* economyFactory = new EconomyBouquetFactoryRQX();
     IBouquetRQX* economyBouquet = economyFactory->createBouquet();
     economyBouquet->deliver("*曼彻斯特 - 维多利亚街 - 曼彻斯特大学*");
+
 
     delete deliveryProxy;
     delete highEndFactory;
@@ -72,4 +78,3 @@ void testAbstractFactory() {
 
 
 void testAbstractFactory();
-

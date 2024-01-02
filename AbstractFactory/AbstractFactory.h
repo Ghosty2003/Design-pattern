@@ -9,19 +9,19 @@
 #include <windows.h>
 
 using namespace std;
-// 鑺辨潫鎺ュ彛
+// 花束接口
 class IBouquetRQX {
 public:
     virtual void deliver(std::string address) = 0;
 };
 
-// 鑺卞簵锟??
+// 花店???
 class FlowershopRQX : public IBouquetRQX {
 public:
     void deliver(std::string address) override;
 };
 
-// 閫佽揣浠ｇ悊锟??
+// 送货代理???
 class DeliveryProxyRQX : public IBouquetRQX {
 private:
     FlowershopRQX* flowerShop;
@@ -30,31 +30,31 @@ public:
     void deliver(std::string address) override;
 };
 
-// 鎶借薄宸ュ巶妯″紡
+// 抽象工厂模式
 
-// 鍓嶇疆澹版槑
+// 前置声明
 class HighEndBouquetRQX;
 class EconomyBouquetRQX;
 
-// 鑺辨潫宸ュ巶鎺ュ彛
+// 花束工厂接口
 class IBouquetFactoryRQX {
 public:
     virtual IBouquetRQX* createBouquet() = 0;
 };
 
-// 楂樼鑺辨潫锟??
+// 高端花束???
 class HighEndBouquetRQX : public IBouquetRQX {
 public:
     void deliver(std::string address) override;
 };
 
-// 缁忔祹鍨嬭姳鏉熺被
+// 经济型花束类
 class EconomyBouquetRQX : public IBouquetRQX {
 public:
     void deliver(std::string address) override;
 };
 
-// 楂樼鑺辨潫宸ュ巶
+// 高端花束工厂
 class HighEndBouquetFactoryRQX : public IBouquetFactoryRQX {
 public:
     IBouquetRQX* createBouquet() override;
@@ -62,7 +62,7 @@ private:
     std::string Hf[2];
 };
 
-// 缁忔祹鍨嬭姳鏉熷伐锟??
+// 经济型花束工???
 class EconomyBouquetFactoryRQX : public IBouquetFactoryRQX {
 public:
     IBouquetRQX* createBouquet() override;
