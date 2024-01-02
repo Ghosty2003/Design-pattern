@@ -15,10 +15,28 @@ int main()
 	FrontController frontController;
 	frontController.set(&dispatcher);
 	const string noTestPattern[] = { "frontController", "RAII", "singleton"}; 
+	int user = 2;//2个之后是user
+	int orders = 9; //
+	int sells = 14;
+	int employees = 20;
 
-
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < 23; i++)
 	{
+		if(i==0){
+			material();
+		}
+		else if(i==user){
+			purchase();
+		}
+		else if(i==orders){
+			order();
+		}
+		else if(i==sells){
+			sell();		
+		}
+		else if(i==employees){
+			employee();
+		}
 		bool continueFlag = false;
 		for (auto str : noTestPattern) {
 
@@ -38,8 +56,6 @@ int main()
 		system("pause");
 		cout << endl;
 	}
-
-	system("pause");
 
 	testAll();
 	return 0;

@@ -1,5 +1,6 @@
 #include"State.h"
-
+#include "../utils/cct_tools.h"
+using namespace std;
 void drawFreshFlower() {
     std::cout << "   @" << std::endl;
     std::cout << "  @@" << std::endl;
@@ -21,7 +22,6 @@ void drawWitheredFlower() {
     cct_setcolor();
 }
 void testState() {
-
     FlowerShopxlj1 flowerShop;
 
     //cct_setcolor(COLOR_BLACK, COLOR_WHITE);

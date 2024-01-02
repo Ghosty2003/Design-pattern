@@ -3,7 +3,7 @@
 using namespace std;
 
 const string designPatterns[25] = {
-	"flyWeight", //first
+	"adapter",//first
 	"templateMethod",//material
 	"iterator",//first
 	"command", //
@@ -15,18 +15,17 @@ const string designPatterns[25] = {
 	"builder",//first
 	"facade",//
 	"proxy",//
-	"adapter",//
 	"abstractFactory",//orders
 	"state",//first
 	"factoryMethod",
 	"prototype",
 	"strategy",
+	"flyWeight",
 	"chainOfResponsibility", //seller
 	"visitor",//first
 	"interpreter",
 	"nullObject", //
 	"servant", //employee
-	"frontController",
 };
 //, "privateClassData";
 
@@ -54,3 +53,8 @@ public:
 
 void testAll();
 void displayFloristSign();
+void material();
+void purchase();
+void order();
+void sell();
+void employee();

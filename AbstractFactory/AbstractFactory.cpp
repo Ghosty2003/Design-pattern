@@ -10,7 +10,7 @@
 using namespace std;
 
 void FlowershopRQX::deliver(std::string address) {
-    cout << "The flower shop will deliver the bouquet to the address:" << address << endl;
+    cout << "»¨µê½«°Ñ»¨ÊøËÍµ½ÒÔÏÂµØÖ·£º" << address << endl;
 }
 
 DeliveryProxyRQX::DeliveryProxyRQX() {
@@ -18,49 +18,49 @@ DeliveryProxyRQX::DeliveryProxyRQX() {
 }
 
 void DeliveryProxyRQX::deliver(std::string address) {
-    cout << "The agent receives the delivery request and will coordinate with an external courier company to complete the delivery task." << endl;
+    cout << "´úÀíÈËÊÕµ½¿ìµİÇëÇóºó£¬½«ÓëÍâ²¿¿ìµİ¹«Ë¾Ğ­µ÷Íê³É¿ìµİÈÎÎñ¡£" << endl;
     flowerShop->deliver(address);
 }
 
 void HighEndBouquetRQX::deliver(std::string address) {
-    cout << "High-end bouquet will be delivered to the address:" << address << endl;
+    cout << "¸ß¶Ë»¨Êø½«ËÍµ½ÒÔÏÂµØÖ·£º" << address << endl;
 }
 
 void EconomyBouquetRQX::deliver(std::string address) {
-    cout << "Economical bouquet will be delivered to the address: " << address << endl;
+    cout << "¾­¼ÃĞÍ»¨Êø½«ËÍµ½ÒÔÏÂµØÖ·£º " << address << endl;
 }
 
 IBouquetRQX* HighEndBouquetFactoryRQX::createBouquet() {
-    cout << "Create a high-end bouquet.*********" << endl;
-    // å®é™…åˆ›å»ºé«˜ç«¯èŠ±æŸçš„ä»£ç 
-    Hf[0] = "Freudian rose";
-    Hf[1] = "Lan Dai";
+    cout << "´´½¨¸ß¶Ë»¨Êø*********" << endl;
+    // 
+    Hf[0] = "¸¥ÂåÒÁµÂÃµ¹å";
+    Hf[1] = "À¼÷ì";
     std::cout << Hf[0] << ' ' << Hf[1] << std::endl;
     return new HighEndBouquetRQX();
 }
 
 IBouquetRQX* EconomyBouquetFactoryRQX::createBouquet() {
-    cout << "Create an economical bouquet.*********" << endl;
-    // å®é™…åˆ›å»ºç»æµå‹èŠ±æŸçš„ä»£ç 
-    Ef[0] = "coreopsis";
-    Ef[1] = "sunflower";
+    cout << "´´½¨¾­¼ÃĞÍ»¨Êø*********" << endl;
+    // 
+    Ef[0] = "²¨Ë¹¾Õ";
+    Ef[1] = "ÏòÈÕ¿û";
     std::cout << Ef[0] << ' ' << Ef[1] << std::endl;
     return new EconomyBouquetRQX();
 }
 
 void testAbstractFactory() {
-    // ä»£ç†æ¨¡å¼ç¤ºä¾‹
+    // 
     IBouquetRQX* deliveryProxy = new DeliveryProxyRQX();
-    deliveryProxy->deliver("*Manchester Victoria Street*");
+    deliveryProxy->deliver("*Âü³¹Ë¹ÌØÎ¬¶àÀûÑÇ½Ö*");
 
-    // æŠ½è±¡å·¥å‚æ¨¡å¼ç¤ºä¾‹
+    // 
     IBouquetFactoryRQX* highEndFactory = new HighEndBouquetFactoryRQX();
     IBouquetRQX* highEndBouquet = highEndFactory->createBouquet();
-    highEndBouquet->deliver("*Manchester - Victoria Street - Manchester Cathedral*");
+    highEndBouquet->deliver("*Âü³¹Ë¹ÌØ - Î¬¶àÀûÑÇ½Ö - Î¬¶àÀûÑÇ½ÌÌÃ*");
 
     IBouquetFactoryRQX* economyFactory = new EconomyBouquetFactoryRQX();
     IBouquetRQX* economyBouquet = economyFactory->createBouquet();
-    economyBouquet->deliver("*Manchester - Victoria Street - Manchester University*");
+    economyBouquet->deliver("*Âü³¹Ë¹ÌØ - Î¬¶àÀûÑÇ½Ö - Âü³¹Ë¹ÌØ´óÑ§*");
 
     delete deliveryProxy;
     delete highEndFactory;
@@ -72,4 +72,3 @@ void testAbstractFactory() {
 
 
 void testAbstractFactory();
-

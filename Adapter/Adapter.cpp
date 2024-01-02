@@ -1,12 +1,11 @@
 #include<iostream>
 #include "Adapter.h"
+#include "../utils/cct_tools.h"
 using namespace std;
 
 void testAdaptor()
 {
-    std::cout << "该系统从不同的花卉供应商获取花卉信息，并通过适配器设计模式将它们统一成相同的接口"
-        << "，以便在花店系统中方便地处理和展示这些花卉信息。" << std::endl
-        << std::endl;
+    
 
     // 使用适配器处理第一个花卉供应商的数据，动态设置价格、描述、名称、颜色
     FlowerSupplier1 supplier1;

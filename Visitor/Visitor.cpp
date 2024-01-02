@@ -1,6 +1,8 @@
 #include"visitor.h"
+#include "../utils/cct_tools.h"
+void testVisitor() {
+    srand(time(0));
 
-void  testVisitor() {
     // 创建花店中的不同花卉
     FreshFlower freshFlower;
     PottedPlant pottedPlant;
