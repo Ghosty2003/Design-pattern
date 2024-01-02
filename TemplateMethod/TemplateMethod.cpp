@@ -2,41 +2,41 @@
 #include"TemplateMethod.h"
 using namespace std;
 
-void Rose::selectSeed() {
+void Rose_wwj::selectSeed() {
 	cout << "选择玫瑰种子" << endl;
 }
 
-void Rose::plant() {
+void Rose_wwj::plant() {
 	cout << "种植玫瑰" << endl;
 }
 
-void Rose::water() {
+void Rose_wwj::water() {
 	cout << "浇灌玫瑰花" << endl;
 }
 
-void Rose::fertilize() {
+void Rose_wwj::fertilize() {
 	cout << "给玫瑰花施肥" << endl;
 }
 
-void Lily::selectSeed() {
+void Lily_wwj::selectSeed() {
 	cout << "选择百合花种子" << endl;
 }
 
-void Lily::plant() {
+void Lily_wwj::plant() {
 	cout << "种植百合花" << endl;
 }
 
-void Lily::water() {
+void Lily_wwj::water() {
 	cout << "浇灌百合花" << endl;
 }
 
-void Lily::fertilize() {
+void Lily_wwj::fertilize() {
 	cout << "给百合花施肥" << endl;
 }
 
 void testTemplateMethod() {
-	Rose rose;
-	Lily lily;
+	Rose_wwj rose;
+	Lily_wwj lily;
 	cout << "玫瑰花的生产流程：" << endl;
 	rose.produceFlower();
 	cout << "百合花的生产流程：" << endl;
@@ -44,8 +44,8 @@ void testTemplateMethod() {
 
 }
 
-//int main() {
-//	testTemplateMethod();
-//
-//	return 0;
-//}
+// int main() {
+// 	testTemplateMethod();
+
+// 	return 0;
+// }

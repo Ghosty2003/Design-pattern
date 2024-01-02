@@ -50,5 +50,5 @@ public:
     }
 };
 
-int testFlyweight();
+void testFlyweight();
 

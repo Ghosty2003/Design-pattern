@@ -1,4 +1,3 @@
-#pragma once
 #include "./cct_tools.h"
 
 //将光标移动到指定位置

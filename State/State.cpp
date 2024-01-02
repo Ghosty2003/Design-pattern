@@ -1,5 +1,5 @@
 #include"State.h"
-#include"cct_tools.h"
+
 void drawFreshFlower() {
     std::cout << "   @" << std::endl;
     std::cout << "  @@" << std::endl;
@@ -23,7 +23,7 @@ void drawWitheredFlower() {
 void testState() {
 
     FlowerShopxlj1 flowerShop;
-    cct_cls();
+
     //cct_setcolor(COLOR_BLACK, COLOR_WHITE);
     //std::cout << "对于不同新鲜状态的花卉，执行不同的处理方式\n" << endl;
     cct_setcolor(COLOR_BLACK, COLOR_HWHITE);

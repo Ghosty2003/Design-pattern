@@ -1,22 +1,23 @@
 #include"visitor.h"
 
 void  testVisitor() {
-    // åˆ›å»ºèŠ±åº—ä¸­çš„ä¸åŒèŠ±å‰
+    // ´´½¨»¨µêÖĞµÄ²»Í¬»¨»Ü
     FreshFlower freshFlower;
     PottedPlant pottedPlant;
 
-    // å°†èŠ±å‰æ”¾å…¥é›†åˆä¸­
+    // ½«»¨»Ü·ÅÈë¼¯ºÏÖĞ
     std::vector<FlowerElement*> flowers;
     flowers.push_back(&freshFlower);
     flowers.push_back(&pottedPlant);
 
-    // åˆ›å»ºè¥é”€è®¿é—®è€…
+    // ´´½¨ÓªÏú·ÃÎÊÕß
     MarketingVisitor marketingVisitor;
     CustomerVisitor customerVisitor;
-    // è®©è®¿é—®è€…è®¿é—®æ¯ä¸ªèŠ±å‰
+    // ÈÃ·ÃÎÊÕß·ÃÎÊÃ¿¸ö»¨»Ü
     std::cout << "Visitor Pattern" << std::endl;
     for (FlowerElement* flower : flowers) {
         flower->accept(marketingVisitor);
         flower->accept(customerVisitor);
+        std::cout << std::endl;
     }
 }

@@ -2,41 +2,31 @@
 #include<iostream>
 using namespace std;
 
-const string designPatterns[33] = {
-
-	"compose", 
-	"decorator",
-	"factoryMethod",
-	"filter",
-	"interpreter", 
+const string designPatterns[25] = {
+	"flyWeight", //first
+	"templateMethod",//material
+	"iterator",//first
+	"command", //
+	"compose",
 	"lazyInitialization",
+	"bridge",//
+	"objectPool", //
+	"publishSubscribe", //user
+	"builder",//first
+	"facade",//
+	"proxy",//
+	"adapter",//
+	"abstractFactory",//orders
+	"state",//first
+	"factoryMethod",
 	"prototype",
 	"strategy",
-	"iterator",// 
-	"facade",//
+	"chainOfResponsibility", //seller
+	"visitor",//first
+	"interpreter",
 	"nullObject", //
-	"servant", //
-	"adapter",//
-	"blackBoard", //
-	"bridge",//
-	"builder",//
-	"chainOfResponsibility", //
-	"command", //
-	"observer",//(Observer)
-	"flyWeight", //
-	"mediator",//(Mediator)
-	"memento",  //
-	"objectPool", //
-	"proxy",//
-	"state",//
-	"templateMethod",//
-	"transferObject",//
-	"visitor",//
-	"abstractFactory",  //
-	"publishSubscribe", //(Subscriber)(Channel)(Publisher)
-	"frontController", 
-	"RAII",  //
-	"singleton" //
+	"servant", //employee
+	"frontController",
 };
 //, "privateClassData";
 
@@ -63,3 +53,4 @@ public:
 };
 
 void testAll();
+void displayFloristSign();

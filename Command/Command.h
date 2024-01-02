@@ -17,6 +17,25 @@ class OrderReceiver {
 public:
     void processOrder(const std::string &order) {
         std::cout << "处理订单: " << order << std::endl;
+        // 添加订单到订单系统
+        addOrderToSystem(order);
+    }
+
+    void cancelOrder(const std::string &order) {
+        std::cout << "取消订单: " << order << std::endl;
+        // 从订单系统中移除订单
+        removeOrderFromSystem(order);
+    }
+
+private:
+    void addOrderToSystem(const std::string &order) {
+        // 实现添加订单到订单系统的逻辑
+        std::cout << "订单系统接收订单: " << order << std::endl;
+    }
+
+    void removeOrderFromSystem(const std::string &order) {
+        // 实现从订单系统中移除订单的逻辑
+        std::cout << "订单系统取消订单: " << order << std::endl;
     }
 };
 
@@ -34,6 +53,7 @@ public:
     }
     void undo() override {
         std::cout << "正在撤回: " << order << "的订单" << std::endl;
+        receiver.cancelOrder(order);
     }
 };
 
