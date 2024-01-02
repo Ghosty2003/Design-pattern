@@ -406,7 +406,7 @@ void outputScene(string request) {
 	else if (request == "publishSubscribe") {
 		cout << "库存系统发布更新花束数量，买家收到商店上新花束信息，包括花束种类及数";
 	}
-	else if (request == "Single") {
+	else if (request == "single") {
 		cout << "统计网站上购买的花束数量，显示月销量，类似于网站计数器";
 	}
 

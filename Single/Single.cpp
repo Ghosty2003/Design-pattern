@@ -36,6 +36,6 @@ void testSingle() {
     statistics->sellBouquet("郁金香花束", 30);
 
     // 打印销售统计信息
-    cout << "总销售额：" << statistics->getTotalSales() << "元" << endl;
-    cout << "总花束销售量：" << statistics->getTotalBouquetsSold() << "束" << endl;
+    std::cout << "总销售额：" << statistics->getTotalSales() << "元" << std::endl;
+    std::cout << "总花束销售量：" << statistics->getTotalBouquetsSold() << "束" << std::endl;
 }

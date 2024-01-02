@@ -20,7 +20,7 @@ class aya_RoseBouquet : public aya_FlowerBouquet
 public:
     std::string show() const override
     {
-        return "一束玫瑰花";
+        return "玫瑰花";
     }
 };
 
@@ -29,7 +29,7 @@ class aya_LilyBouquet : public aya_FlowerBouquet
 public:
     std::string show() const override
     {
-        return "一束百合花";
+        return "百合花";
     }
 };
 
@@ -38,7 +38,7 @@ class aya_TulipBouquet : public aya_FlowerBouquet
 public:
     std::string show() const override
     {
-        return "一束郁金香";
+        return "郁金香";
     }
 };
 

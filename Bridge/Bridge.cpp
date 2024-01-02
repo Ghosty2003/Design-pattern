@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Bridge.h"
-
+#include "../utils/cct_tools.h"
 
 //颜色的具体实现类
 void PinkAndWhite::setattribute()
@@ -46,9 +46,11 @@ void ToMom::setattribute()
 void ToMom::print()
 {
     cout << "*一位用户订了给母亲的花束*" << endl;
+    cct_setcolor(COLOR_BLACK, COLOR_HPINK);
     cout << implementor1->colour << "." << endl;
     cout << implementor2->Material<< endl;//包装材质
     cout << implementor3->category << "." << endl;
+    cct_setcolor();
 }
 
 //通过具体实现类设置属性
@@ -62,9 +64,11 @@ void ToFriends::setattribute()
 void ToFriends::print()
 {
     cout << "*一位用户订了给朋友的花束*" << endl;
+    cct_setcolor(COLOR_BLACK, COLOR_HYELLOW);
     cout << implementor1->colour << "." << endl;
     cout << implementor2->Material<< endl;//包装材质
     cout << implementor3->category << "." << endl;
+    cct_setcolor();
 }
 
 
@@ -88,6 +92,7 @@ int testBridge()
     friends->setattribute();
     friends->print();
     cout << endl;
+    //释放
     delete friends;
     delete mom;
     delete PinkWhite;
