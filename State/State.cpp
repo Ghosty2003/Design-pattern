@@ -1,4 +1,6 @@
 #include"State.h"
+#include"../utils/cct_tools.h"
+using namespace std;
 
 void drawFreshFlower() {
     std::cout << "   @" << std::endl;
@@ -21,37 +23,67 @@ void drawWitheredFlower() {
     cct_setcolor();
 }
 void testState() {
+    cct_cls();
+    const char* sign[] = {
+        "**************************************************************************************",
+		"*  _________      .__              _____                                             *", 
+		"* /   _____/____  |  |   ____     /     \\ _____    ____    _________    ____   ____  *",  
+		"* \\_____  \\__  \\ |  | _/ __ \\   /  \\ /  \\__  \\  /    \\  / ___\\__  \\ _/ __ \\ / ___\\ *",  
+		"* /        \\/ __ \\|  |_\\  ___/  /    Y    \\/ __ \\|   |  \\/ /_/  > __ \\  ___// /_/  >*",  
+		"*/_______  (____  /____/\\___  > \\____|__  (____  /___|  /\\___  (____  /\\___  >___  / *",
+        "*        \\/     \\/          \\/          \\/     \\/     \\//_____/     \\/     \\/_____/  *",  
+		"*                                                                      *",  
+		"************************************************************************", 
+
+    };
+
+    for (int i = 0; i < 9; i++) {
+		if(i==0){
+			cct_setcolor(COLOR_BLACK, COLOR_PINK);
+		}
+		else if(i==7){
+			cct_setcolor(COLOR_BLACK, COLOR_PINK);
+		}
+		else{
+			cct_setcolor(COLOR_BLACK, COLOR_HYELLOW);
+		}
+
+        std::cout << sign[i] << std::endl;
+    }
+
+    cct_setcolor();
+    cout<<"ä¸‹é¢æ˜¯å•†å“é”€å”®ç®¡ç†é˜¶æ®µï¼š"<<endl;
 
     FlowerShopxlj1 flowerShop;
 
     //cct_setcolor(COLOR_BLACK, COLOR_WHITE);
-    //std::cout << "¶ÔÓÚ²»Í¬ÐÂÏÊ×´Ì¬µÄ»¨»Ü£¬Ö´ÐÐ²»Í¬µÄ´¦Àí·½Ê½\n" << endl;
+    //std::cout << "ï¿½ï¿½ï¿½Ú²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½Ä»ï¿½ï¿½Ü£ï¿½Ö´ï¿½Ð²ï¿½Í¬ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½Ê½\n" << endl;
     cct_setcolor(COLOR_BLACK, COLOR_HWHITE);
-    std::cout << "»¶Ó­¹âÁÙStateÄ£Ê½\n" << endl;
+    std::cout << "ï¿½ï¿½Ó­ï¿½ï¿½ï¿½ï¿½StateÄ£Ê½\n" << endl;
 
     system("pause");
     cct_setcolor(COLOR_BLACK, COLOR_HRED);
     
-    cout << "Çå³¿»¨µê²É¹ºÁËÒ»ÖêÐÂÏÊ»¨»Ü£º" << endl;
+    cout << "ï¿½å³¿ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ê»ï¿½ï¿½Ü£ï¿½" << endl;
     drawFreshFlower();
-    flowerShop.sellFlower();  // ³õÊ¼×´Ì¬£¬ÂôÐÂÏÊ»¨
+    flowerShop.sellFlower();  // ï¿½ï¿½Ê¼×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê»ï¿½
     system("pause");
     std::cout << endl;
 
 
     
     cct_setcolor(COLOR_BLACK, COLOR_YELLOW);
-    std::cout << "°øÍíÕâÖê»¨ÈÔÈ»Ã»ÓÐÏúÊÛ³öÈ¥" << endl;
+    std::cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê»¨ï¿½ï¿½È»Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Û³ï¿½È¥" << endl;
     flowerShop.setState(new SlightlyWitheredFlowerState());
-    flowerShop.sellFlower();  // ÍíÉÏ£¬ÂôÓÐµã²»ÐÂÏÊµÄ»¨
+    flowerShop.sellFlower();  // ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½Ðµã²»ï¿½ï¿½ï¿½ÊµÄ»ï¿½
     system("pause");
     std::cout << endl;
 
     
     cct_setcolor(COLOR_BLACK, COLOR_HBLACK);
-    std::cout << "»¨°êÖð½¥µòÁã£¬¿´À´ÕâÖê»¨ÒÑ¾­²»±»ÈËÐèÒª" << endl;
+    std::cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ð½¥µï¿½ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê»¨ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª" << endl;
     drawWitheredFlower();
     flowerShop.setState(new WitheredFlowerState());
-    flowerShop.sellFlower();  // Âô¿ÝÎ®µÄ»¨£¬Æ·´Î½Ï²î
+    flowerShop.sellFlower();  // ï¿½ï¿½ï¿½ï¿½Î®ï¿½Ä»ï¿½ï¿½ï¿½Æ·ï¿½Î½Ï²ï¿½
     cct_setcolor(COLOR_BLACK, COLOR_WHITE);
 }
